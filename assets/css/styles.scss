@@ -1,1 +1,23 @@
+.main-content {
+  top: 20%;
+  left: 50%;
+  position: absolute;
+}
 
+input {
+  padding: 8px;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px 0 0 10px;
+}
+
+#searchbar {
+  right: 50%;  
+}
+
+.btn {
+  margin-left: -4px;
+  border-radius: 0 10px 10px 0;
+  border: none;
+  padding: 9px;
+  background-color: #e3e3e3;
+}
