@@ -20,7 +20,15 @@ input {
 }
 
 #searchbar:focus {
-  border: none;  
+  outline: none;  
+  
+  input {
+    border: 1px solid #c3c3c3;  
+  }
+  
+  .btn {
+    background-color: #c3c3c3
+  }
 }
 
 .btn {
@@ -30,3 +38,4 @@ input {
   padding: 9px;
   background-color: #e3e3e3;
 }
+
