@@ -2,15 +2,17 @@
   <head>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-    <script src="{{ '/assets/js/default.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </head>
   
   <body>
     <main>
       <div id="main-content">
         <h1>search twitter.</h1>
-        <input placeholder="Search" type="text" required>
-        <button type="submit">GO</button>
+        <div id="searchbar">
+          <input placeholder="Search" type="text" required>
+          <button class="btn" type="submit">GO</button>
+        </div>
       </div>
     </main>
     
