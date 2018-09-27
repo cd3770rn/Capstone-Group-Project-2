@@ -22,7 +22,9 @@ input {
 
 #searchbar:focus {
   outline: none;  
-  
+}
+
+#searchbar:hover {
   input {
     border: 1px solid #c3c3c3;  
   }
