@@ -24,7 +24,9 @@ input {
 }
 
 #searchbar {
-  right: 50%;  
+  position: absolute;
+  display: inline-table;
+  right: -5%;  
 }
 
 input:focus, .btn:focus {
