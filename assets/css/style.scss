@@ -20,17 +20,17 @@ input {
   right: 50%;  
 }
 
-#searchbar:focus {
-  outline: none;  
+input:focus, .btn:focus {
+  outline: none;
 }
 
 #searchbar:hover {
   input {
-    border: 1px solid #c3c3c3;  
+    border: 1px solid #d3d3d3;  
   }
   
   .btn {
-    background-color: #c3c3c3
+    background-color: #d3d3d3
   }
 }
 
