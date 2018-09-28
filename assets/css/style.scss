@@ -24,6 +24,10 @@ input:focus, .btn:focus {
   outline: none;
 }
 
+.btn:active {
+  background-color: #c3c3c3;
+}
+
 #searchbar:hover {
   input {
     border: 1px solid #d3d3d3;  
