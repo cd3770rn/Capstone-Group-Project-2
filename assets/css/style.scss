@@ -45,6 +45,10 @@ input:focus, .btn:focus {
   .btn {
     background-color: #d3d3d3
   }
+  
+  .btn:active {
+    background-color: #c3c3c3;
+  }
 }
 
 .btn {
