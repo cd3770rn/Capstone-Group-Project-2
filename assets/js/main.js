@@ -1,5 +1,5 @@
 window.onload = function(){
-    var config = {
+    let config = {
           apiKey: "AIzaSyDHar8VdiUJPi5fnayZmc9pgyFyNhyAlxk",
           authDomain: "twitter-search-wrapper.firebaseapp.com",
           databaseURL: "https://twitter-search-wrapper.firebaseio.com",
@@ -8,10 +8,10 @@ window.onload = function(){
           messagingSenderId: "139961615979"
         };
     
-    firebase.initializeApp(config);
+    let app = firebase.initializeApp(config);
     
     // Get a reference to the Firebase database
-    var database = firebase.firestore();
+    let database = firebase.firestore();
     
 //     // function to save search entries to database
 //     function saveToFirebase(search) {
