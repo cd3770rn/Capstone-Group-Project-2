@@ -13,6 +13,19 @@ window.onload = function(){
     // Get a reference to the Firebase database
     let database = firebase.firestore();
     
+    // Add a new document in collection "cities"
+    database.collection("cities").doc("LA").set({
+        name: "Los Angeles",
+        state: "CA",
+        country: "USA"
+    })
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+    
 //     // function to save search entries to database
 //     function saveToFirebase(search) {
 //         var searchObject = {
