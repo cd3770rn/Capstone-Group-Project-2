@@ -28,5 +28,5 @@ function saveToFirebase(db, collection, doc, json) {
     .catch(function(error) {
         console.error("Error writing document: ", error);
     });
-
+}
     
