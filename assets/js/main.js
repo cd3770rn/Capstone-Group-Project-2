@@ -1,3 +1,4 @@
+let database;
 window.onload = function(){
     const config = {
           apiKey: "AIzaSyDHar8VdiUJPi5fnayZmc9pgyFyNhyAlxk",
@@ -10,39 +11,18 @@ window.onload = function(){
     
     const app = firebase.initializeApp(config);
     
-    const database = firebase.firestore();
+    database = firebase.firestore();
     const settings = {
         timestampsInSnapshots: true
     };
     database.settings(settings);
-    
-    // Add a new document in collection "cities"
-    database.collection("cities").doc("LA").set({
-        name: "Los Angeles",
-        state: "CA",
-        country: "USA"
-    })
-        .then(function() {
-            console.log("Document successfully written!");
-        })
-        .catch(function(error) {
-            console.error("Error writing document: ", error);
-        });
-    
-//     // function to save search entries to database
-//     function saveToFirebase(search) {
-//         var searchObject = {
-//             search: search
-//         };
-
-//         database().ref('search-entries').push().set(searchObject)
-//             .then(function(snapshot) {
-//                 success(); // some success method
-//             }, function(error) {
-//                 console.log('error' + error);
-//                 error(); // some error method
-//             });
-//     }
-
-//     saveToFirebase("test");
 }
+
+function saveToFirebase(db, collection, doc, json) {
+    db.collection(collection).doc(doc).set(json)
+    .then(function(){
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
