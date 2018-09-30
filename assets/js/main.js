@@ -16,6 +16,8 @@ window.onload = function(){
         timestampsInSnapshots: true
     };
     database.settings(settings);
+    
+    saveToFirebase(database, "test", "test1", {name1: "Hello", name2: "World!"})
 }
 
 function saveToFirebase(db, collection, doc, json) {
@@ -26,3 +28,5 @@ function saveToFirebase(db, collection, doc, json) {
     .catch(function(error) {
         console.error("Error writing document: ", error);
     });
+
+    
