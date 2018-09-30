@@ -10,7 +10,7 @@ window.onload = function(){
     
     const app = firebase.initializeApp(config);
     
-    // Get a reference to the Firebase database
+    const firestore = admin.firestore();
     const database = firebase.firestore();
     const settings = {
         timestampsInSnapshots: true
