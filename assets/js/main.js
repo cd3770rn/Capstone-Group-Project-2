@@ -10,12 +10,11 @@ window.onload = function(){
     
     const app = firebase.initializeApp(config);
     
-    const firestore = admin.firestore();
     const database = firebase.firestore();
     const settings = {
         timestampsInSnapshots: true
     };
-    firestore.settings(settings);
+    database.settings(settings);
     
     // Add a new document in collection "cities"
     database.collection("cities").doc("LA").set({
