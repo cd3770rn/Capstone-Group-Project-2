@@ -12,6 +12,7 @@ window.onload = function(){
     
     // Get a reference to the Firebase database
     let database = firebase.firestore();
+    database.firestore.settings({ timestampsInSnapshots: true });
     
     // Add a new document in collection "cities"
     database.collection("cities").doc("LA").set({
