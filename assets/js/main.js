@@ -18,7 +18,7 @@ window.onload = function(){
     database.settings(settings);
     
     saveToFirebase(database, "test", "test1", {name1: "Hello", name2: "World!"})
-}
+};
 
 function saveToFirebase(db, collection, doc, json) {
     db.collection(collection).doc(doc).set(json)
