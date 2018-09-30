@@ -1,6 +1,6 @@
 window.onload = function(){
     // Get a reference to the Firebase database
-    var database = firebase.database();
+    var database = firebase.firestore();
 
 //     // function to save search entries to database
 //     function saveToFirebase(search) {
