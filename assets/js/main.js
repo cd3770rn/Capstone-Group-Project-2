@@ -1,5 +1,5 @@
 window.onload = function(){
-    let config = {
+    const config = {
           apiKey: "AIzaSyDHar8VdiUJPi5fnayZmc9pgyFyNhyAlxk",
           authDomain: "twitter-search-wrapper.firebaseapp.com",
           databaseURL: "https://twitter-search-wrapper.firebaseio.com",
@@ -8,11 +8,14 @@ window.onload = function(){
           messagingSenderId: "139961615979"
         };
     
-    let app = firebase.initializeApp(config);
+    const app = firebase.initializeApp(config);
     
     // Get a reference to the Firebase database
-    let database = firebase.firestore();
-    database.firestore.settings({ timestampsInSnapshots: true });
+    const database = firebase.firestore();
+    const settings = {
+        timestampsInSnapshots: true
+    };
+    firestore.settings(settings);
     
     // Add a new document in collection "cities"
     database.collection("cities").doc("LA").set({
