@@ -17,5 +17,5 @@ window.onload = function(){
             });
     }
 
-    saveToFirebase(search);
+    saveToFirebase("test");
 }
