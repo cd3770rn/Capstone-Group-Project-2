@@ -29,4 +29,14 @@ function saveToFirebase(db, collection, doc, json) {
         console.error("Error writing document: ", error);
     });
 }
-    
+
+// read from database collection called "test"
+db.collection('test').get()
+    .then((snapshot) => {
+        snapshot.forEach((doc) => {
+            console.log(doc.id, '=>', doc.data());
+        });
+    })
+    .catch((err) => {
+        console.log('Error getting documents', err);
+    });
