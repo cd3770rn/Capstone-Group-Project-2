@@ -48,8 +48,9 @@ function get(collection, doc) {
 }
 
 
-function getGiphy(input){
-  var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=1");
+function getGiphy(){
+  let input = document.getElementById("search").innerText;
+  let xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=1");
   xhr.done(function (response) {
       console.log("success got data", response);
       var jiffs = response.data
