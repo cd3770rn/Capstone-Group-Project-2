@@ -56,7 +56,7 @@ function getGiphy(){
       console.log("success got data", response);
       var jiffs = response.data
       for (i in jiffs){
-          $("html").append("<img src='" + jiffs[i].images.original.url + "' style='height=250px; width:250px'/>")
+          $("main").append("<img src='" + jiffs[i].images.original.url + "' style='height=250px; width:250px'/>")
       }
   });
 }
