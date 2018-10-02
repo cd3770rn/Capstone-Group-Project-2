@@ -50,6 +50,7 @@ function get(collection, doc) {
 
 function getGiphy(){
   let input = document.getElementById("search").innerText;
+  console.log(input);
   let xhr = $.get("https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=1");
   xhr.done(function (response) {
       console.log("success got data", response);
