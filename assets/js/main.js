@@ -18,7 +18,8 @@ window.onload = function(){
     };
     database.settings(settings);
     
-    saveToFirebase(database, "test", "test1", {name1: "Hello", name2: "World!"})
+    //saveToFirebase(database, "test", "test1", {name1: "Hello", name2: "World!"})
+    get("cities", "LA");
 };
 
 function save(db, collection, doc, json) {
@@ -45,3 +46,4 @@ function get(collection, doc) {
         console.log("Error getting document:", error);
     });
 }
+
