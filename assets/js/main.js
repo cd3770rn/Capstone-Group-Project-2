@@ -1,4 +1,5 @@
 let database;
+
 window.onload = function(){
     const config = {
           apiKey: "AIzaSyDHar8VdiUJPi5fnayZmc9pgyFyNhyAlxk",
@@ -20,7 +21,7 @@ window.onload = function(){
     saveToFirebase(database, "test", "test1", {name1: "Hello", name2: "World!"})
 };
 
-function saveToFirebase(db, collection, doc, json) {
+function save(db, collection, doc, json) {
     db.collection(collection).doc(doc).set(json)
     .then(function(){
         console.log("Document successfully written!");
@@ -30,3 +31,17 @@ function saveToFirebase(db, collection, doc, json) {
     });
 }
     
+function get(collection, doc) {
+    var docRef = 
+
+    database.collection(collection).doc(doc).get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+}
