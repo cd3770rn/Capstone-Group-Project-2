@@ -3,15 +3,17 @@
 
 @import "{{ site.theme }}";
 
-html, body {
-    
-}
-
 $bg-color: #1370FB;
 $dot-color: #3882E8;
 
 $dot-size: 2px;
 $dot-space: 22px;
+
+html, body {
+    
+}
+
+
 
 body {
 	background:
@@ -28,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 48px;
   font-weight: 800;
+  text-shadow: 2px 2px #aa00ff, 0px 2px #d50000;
 }
 
 #main-content {
