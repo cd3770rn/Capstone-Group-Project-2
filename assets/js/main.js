@@ -18,7 +18,7 @@ window.onload = function(){
     };
     database.settings(settings);
     
-    saveToFirebase(database, "test", "test1", {name1: "New", name2: "Test"})
+    save(database, "test", "test1", {name1: "New", name2: "Test"})
     //get("cities", "LA");
 };
 
