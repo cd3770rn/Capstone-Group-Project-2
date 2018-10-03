@@ -45,6 +45,10 @@ input {
   padding: 8px;
   border: 1px solid #e3e3e3;
   border-radius: 10px;
+	color: #aa00ff;
+	font-size: 15px;
+	font-family: 'Dosis', sans-serif;
+	width: 12rem;
 }
 
 #searchbar {
@@ -84,6 +88,9 @@ input:focus, .btn:focus {
   background-color: #e3e3e3;
 }
 
-::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder{ /* Chrome/Opera/Safari */
+::placeholder, ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder { /* Chrome/Opera/Safari */
   font-family: 'Dosis', sans-serif;
+	font-size: 15px;
+	color: #aa00ff;
+	text-transform: lowercase;
 }
