@@ -84,3 +84,6 @@ input:focus, .btn:focus {
   background-color: #e3e3e3;
 }
 
+::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder{ /* Chrome/Opera/Safari */
+  font-family: 'Dosis', sans-serif;
+}
