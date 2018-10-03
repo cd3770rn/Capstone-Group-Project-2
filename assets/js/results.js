@@ -6,8 +6,9 @@ window.onload = function() {
 
 function parseURL(){
   let url = window.location.search;
-  return decodeURIComponent(url);
-  //return url;
+  url = url.replace("?query=", "");
+  url = url.replace("+", " ");
+  return url;
 }
 
 function getGiphy(){
