@@ -20,7 +20,7 @@ body {
 		linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
 		linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
 		$dot-color;
-		background-size: $dot-space $dot-space;
+	background-size: $dot-space $dot-space;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 48px;
   font-weight: 800;
+  color: #f1f1f1;
   text-shadow: 2px 2px #aa00ff, 0px 2px #d50000;
 }
 
