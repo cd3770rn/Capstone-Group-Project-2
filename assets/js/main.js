@@ -19,7 +19,7 @@ window.onload = function(){
     database.settings(settings);
     
     //save2(database, "test", "tests", "test1", "test", {name1: "Test", name2: "#1"});
-    save2(database, "devices", "Apple", "iPhone 6", "10012011123U", {tech: "Alex Mastin", actions: "Cellbie", date: "10/3/2018"};
+    save2(database, "devices", "Apple", "iPhone 6", "10012011123U", {tech: "Alex Mastin", actions: "Cellbie", date: "10/3/2018"});
     //get("cities", "LA");
 };
 
