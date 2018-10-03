@@ -18,7 +18,7 @@ window.onload = function(){
     };
     database.settings(settings);
     
-    save(database, "test", "tests", "test1", {name1: "Test", name2: "#1"});
+    save2(database, "test", "tests", "test1", {name1: "Test", name2: "#1"});
     //get("cities", "LA");
 };
 
