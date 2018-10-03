@@ -18,7 +18,7 @@ window.onload = function(){
     };
     database.settings(settings);
     
-    save2(database, "test", "tests", "test1", {name1: "Test", name2: "#1"});
+    save2(database, "test", "tests", "test1", "test", {name1: "Test", name2: "#1"});
     //get("cities", "LA");
 };
 
@@ -32,8 +32,8 @@ function save(db, collection, doc, json) {
     });
 }
 
-function save2(db, collection, collection1, doc, json) {
-    db.collection(collection).doc(doc).collection(collection1).set(json)
+function save2(db, collection, collection1, doc, doc1, json) {
+    db.collection(collection).doc(doc).collection(collection1).doc(doc1).set(json)
     .then(function(){
         console.log("Document successfully written!");
     })
