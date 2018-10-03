@@ -18,12 +18,22 @@ window.onload = function(){
     };
     database.settings(settings);
     
-    save(database, "test", "test1", {name1: "New", name2: "Test"})
+    save(database, "test", "tests", "test1", {name1: "Test", name2: "#1"});
     //get("cities", "LA");
 };
 
 function save(db, collection, doc, json) {
     db.collection(collection).doc(doc).set(json)
+    .then(function(){
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+}
+
+function save2(db, collection, collection1, doc, json) {
+    db.collection(collection).doc(doc).collection(collection1).set(json)
     .then(function(){
         console.log("Document successfully written!");
     })
