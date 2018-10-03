@@ -5,9 +5,9 @@ window.onload = function() {
 
 
 function parseURL(){
-  let url = window.location.search;
-  url = url.replace("?query=", "");
-  url = url.replace("+", " ");
+  let url = window.location.search; // get url
+  url = url.replace("?query=", ""); //remove fluff
+  url = url.split("+").join(" "); // convert all + to " " so: cats+and+dogs --> cats and dogs
   return url;
 }
 
