@@ -17,10 +17,6 @@ window.onload = function(){
         timestampsInSnapshots: true
     };
     database.settings(settings);
-    
-    //save2(database, "test", "tests", "test1", "test", {name1: "Test", name2: "#1"});
-    //save2(database, "devices", "iPhone 6", "Apple", "10012011124U", {tech: "Alex Mastin", actions: "Cellbie", date: "10/3/2018"});
-    getAll("iPhone 6");
 };
 
 function save(db, collection, doc, json) {
@@ -54,14 +50,4 @@ function get(collection, doc) {
     }).catch(function(error) {
         console.log("Error getting document:", error);
     });
-}
-
-function getAll(collection) {
-    database.collection(collection).get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-    });
-});
-
 }
