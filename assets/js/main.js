@@ -18,8 +18,8 @@ window.onload = function(){
     };
     database.settings(settings);
     
-    //saveToFirebase(database, "test", "test1", {name1: "Hello", name2: "World!"})
-    get("cities", "LA");
+    saveToFirebase(database, "test", "test1", {name1: "New", name2: "Test"})
+    //get("cities", "LA");
 };
 
 function save(db, collection, doc, json) {
