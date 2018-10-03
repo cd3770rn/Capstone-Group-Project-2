@@ -20,7 +20,7 @@ window.onload = function(){
     
     //save2(database, "test", "tests", "test1", "test", {name1: "Test", name2: "#1"});
     //save2(database, "devices", "iPhone 6", "Apple", "10012011124U", {tech: "Alex Mastin", actions: "Cellbie", date: "10/3/2018"});
-    get("devices", "Apple");
+    get("devices", "iPhone 6");
 };
 
 function save(db, collection, doc, json) {
@@ -44,8 +44,6 @@ function save2(db, collection, collection1, doc, doc1, json) {
 }
     
 function get(collection, doc) {
-    var docRef = 
-
     database.collection(collection).doc(doc).get().then(function(doc) {
         if (doc.exists) {
             console.log("Document data:", doc.data());
