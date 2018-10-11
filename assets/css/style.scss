@@ -120,10 +120,6 @@ input:focus, .btn:focus {
   transition: all 0.3s ease;
 }
 
-.lbl:active:after { 
-  transform: scale(1.15, 0.85);
-}
-
 .slider:checked ~ label {
   background: #f1f1f1;
 }
