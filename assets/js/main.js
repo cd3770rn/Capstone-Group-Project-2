@@ -55,6 +55,6 @@ function get(collection, doc) {
 
 function enableSlider(){
     $(".slider").change(function() {
-        console.log($(".lbl")[0].attr("style"));
+        console.log($(".lbl").css("background-color"));
     });
 }
