@@ -93,6 +93,7 @@ input:focus, .btn:focus {
 	font-size: 15px;
 	color: #aa00ff;
 	text-transform: lowercase;
+	user-select: none;
 }
 
 #toggle-switch {
