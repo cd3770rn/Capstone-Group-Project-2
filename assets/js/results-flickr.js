@@ -19,7 +19,7 @@ function createIMG(url) {
 }
 
 function getFlickr(input) {
-    var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
     $.getJSON(flickerAPI, {
         tags: $("#search2").val(),
         tagmode: "any",
