@@ -56,10 +56,10 @@ function get(collection, doc) {
 function enableSlider(){
     $(".slider").change(function() {
         if ($(".lbl").css("background-color") == "rgb(204, 204, 204)") {
-            $("#form").attr("action", "results.html?get=giphy");
+            $("#form").attr("action", "results-flickr.html");
         }
         else if ($(".lbl").css("background-color") == "rgb(241, 241, 241)") {
-            $("#form").attr("action", "results.html?get=flickr");
+            $("#form").attr("action", "results-giphy.html");
         }
     });
 }
