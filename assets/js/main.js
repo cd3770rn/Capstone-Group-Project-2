@@ -17,6 +17,7 @@ window.onload = function(){
         timestampsInSnapshots: true
     };
     database.settings(settings);
+    enableSlider();
 };
 
 function save(db, collection, doc, json) {
