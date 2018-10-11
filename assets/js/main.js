@@ -56,5 +56,11 @@ function get(collection, doc) {
 function enableSlider(){
     $(".slider").change(function() {
         console.log($(".lbl").css("background-color"));
+        if ($(".lbl").css("background-color") == "rgb(204, 204, 204)") {
+            console.log("white");    
+        }
+        else if ($(".lbl").css("background-color") == "rgb(241, 241, 241)") {
+            console.log("grey");
+        }
     });
 }
