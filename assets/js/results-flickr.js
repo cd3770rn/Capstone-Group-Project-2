@@ -19,19 +19,20 @@ function createIMG(url) {
 }
 
 function getFlickr(input) {
-    var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-    $.getJSON(flickerAPI, {
-        tags: $("#search2").val(),
-        tagmode: "any",
-        format: "json"
-    }).done(function (result, status, xhr) {
-        $.each(result.items, function (i, item) {
-            $("<img>").attr("src", item.media.m).appendTo("#main-content");
-            if (i === 5) {
-                return false;
-            }
-        });
-    }).fail(function (xhr, status, error) {
-        alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
-    });
+  let flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  let resultCount = 10;
+  $.getJSON(flickerAPI, {
+      tags: $("#search2").val(),
+      tagmode: "any",
+      format: "json"
+  }).done(function (result, status, xhr) {
+      $.each(result.items, function (i, item) {
+          $("<img>").attr("src", item.media.m).appendTo("#main-content");
+          if (i === resultCount) {
+              return false;
+          }
+      });
+  }).fail(function (xhr, status, error) {
+      alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+  });
 }
