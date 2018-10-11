@@ -51,3 +51,9 @@ function get(collection, doc) {
         console.log("Error getting document:", error);
     });
 }
+
+function enableSlider(){
+    $(".slider").change(function() {
+        console.log($(".lbl")[0].attr("style"));
+    });
+}
