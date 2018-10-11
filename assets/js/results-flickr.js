@@ -26,7 +26,7 @@ function getFlickr(input) {
         format: "json"
     }).done(function (result, status, xhr) {
         $.each(result.items, function (i, item) {
-            $("<img>").attr("src", item.media.m).appendTo("#outputDiv");
+            $("<img>").attr("src", item.media.m).appendTo("#main-content");
             if (i === 5) {
                 return false;
             }
