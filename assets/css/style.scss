@@ -95,6 +95,12 @@ input:focus, .btn:focus {
 	text-transform: lowercase;
 }
 
+#toggle-switch {
+  position: relative;
+  top: 0.5rem;
+  left: 4.5rem;	
+}
+
 .lbl {
   position: relative;
   display: block;
