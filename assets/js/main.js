@@ -1,4 +1,5 @@
 let database;
+
 window.onload = function(){
     const config = {
           apiKey: "AIzaSyDHar8VdiUJPi5fnayZmc9pgyFyNhyAlxk",
@@ -16,11 +17,10 @@ window.onload = function(){
         timestampsInSnapshots: true
     };
     database.settings(settings);
-    
-    saveToFirebase(database, "test", "test1", {name1: "Hello", name2: "World!"})
+    enableSlider();
 };
 
-function saveToFirebase(db, collection, doc, json) {
+function save(db, collection, doc, json) {
     db.collection(collection).doc(doc).set(json)
     .then(function(){
         console.log("Document successfully written!");
@@ -30,6 +30,7 @@ function saveToFirebase(db, collection, doc, json) {
     });
 }
 
+<<<<<<< HEAD
 // read from database collection called "test"
 db.collection('test').get()
     .then((snapshot) => {
@@ -40,3 +41,38 @@ db.collection('test').get()
     .catch((err) => {
         console.log('Error getting documents', err);
     });
+=======
+function save2(db, collection, collection1, doc, doc1, json) {
+    db.collection(collection).doc(doc).collection(collection1).doc(doc1).set(json)
+    .then(function(){
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+}
+    
+function get(collection, doc) {
+    database.collection(collection).doc(doc).get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+}
+
+function enableSlider(){
+    $(".slider").change(function() {
+        if ($(".lbl").css("background-color") == "rgb(204, 204, 204)") {
+            $("#form").attr("action", "results-flickr.html");
+        }
+        else if ($(".lbl").css("background-color") == "rgb(241, 241, 241)") {
+            $("#form").attr("action", "results-giphy.html");
+        }
+    });
+}
+>>>>>>> master
