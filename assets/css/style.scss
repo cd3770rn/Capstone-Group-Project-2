@@ -151,10 +151,12 @@ input:focus, .btn:focus {
 
 .zoom-10 {
 	zoom: 10%;	
+	-moz-transform: scale(10%);
 }
 
 .zoom-50 {	
 	zoom: 50%;
+	-moz-transform: scale(50%);
 }
 
 .flickr-icon {
