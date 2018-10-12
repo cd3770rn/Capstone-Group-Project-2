@@ -1,0 +1,36 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6, a, p {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 800;
+  }
+  
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    padding-left: 3rem;
+    padding-top: 0.5rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #aa00ff;
+    user-select: none;
+  }
+  
+  #topbar {
+    background: #f1f1f1;
+    height: 3.1rem;
+    border-bottom: 1px solid #ededed;
+  }
+  
+  #saved {
+    top: 1rem;
+    right: 8rem;
+    position: absolute;
+    text-transform: lowercase;
+    font-size: 18px;
+  }
