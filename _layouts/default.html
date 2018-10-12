@@ -33,5 +33,41 @@
       </div>
     </main>
   </body>
+  <script>
+      config = {
+          apiKey: "AIzaSyDHar8VdiUJPi5fnayZmc9pgyFyNhyAlxk",
+          authDomain: "twitter-search-wrapper.firebaseapp.com",
+          databaseURL: "https://twitter-search-wrapper.firebaseio.com",
+          projectId: "twitter-search-wrapper",
+          storageBucket: "twitter-search-wrapper.appspot.com",
+          messagingSenderId: "139961615979"
+      };
+
+      firebase.initializeApp(config);
+
+      function login() {
+          function newLoginHappened(user) {
+              if (user) {
+                  // User is signed in
+                  app(user);
+              } else {
+                  var provider = new firebase.auth.GoogleAuthProvider();
+                  firebase.auth().signInWithRedirect(provider);
+              }
+          }
+
+          firebase.auth().onAuthStateChanged(newLoginHappened);
+      }
+
+      function app(user) {
+          // user.displayName
+          // user.email
+          // user.photoURL
+          // user.uid
+          document.getElementById("clientName").innerHTML = user.displayName;
+      }
+
+      window.onload = login;
+  </script>
 </html>
 
