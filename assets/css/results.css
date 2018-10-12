@@ -39,4 +39,8 @@ a {
   font-size: 18px;
 }
 
+img {
+  padding: 10px; 
+  max-height: 250px;
+}
 
