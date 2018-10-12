@@ -6,10 +6,12 @@
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/auth.js' | relative_url }}"></script>
   </head>
   
   <body>
     <main>
+      <h6>Hello <span id="clientName"></span></h6>
       <h6>Sign in with Google</h6>
       <div id="main-content">
         <h1>JIFF.LY</h1>
@@ -26,6 +28,34 @@
         </div>
       </div>
     </main>
-  </body>  
+  </body>
+
+  <script>
+
+      function login() {
+          function newLoginHappened(user) {
+              if (user) {
+                  // User is signed in
+                  app(user);
+              } else {
+                  var provider = new firebase.auth.GoogleAuthProvider();
+                  firebase.auth().signInWithRedirect(provider);
+              }
+          }
+
+          firebase.auth().onAuthStateChanged(newLoginHappened);
+      }
+
+      function app(user) {
+          // user.displayName
+          // user.email
+          // user.photoURL
+          // user.uid
+          document.getElementById("clientName").innerHTML = user.displayName;
+      }
+
+      window.onload = login;
+
+  </script>
 </html>
 
