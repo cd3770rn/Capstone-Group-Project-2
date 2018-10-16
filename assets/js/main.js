@@ -12,30 +12,6 @@ window.onload = function(){
 
     firebase.initializeApp(config);
 
-    function login() {
-        function newLoginHappened(user) {
-            if (user) {
-                // User is signed in
-                app(user);
-            } else {
-                var provider = new firebase.auth.GoogleAuthProvider();
-                firebase.auth().signInWithRedirect(provider);
-            }
-        }
-
-        firebase.auth().onAuthStateChanged(newLoginHappened);
-    }
-
-    function app(user) {
-        // user.displayName
-        // user.email
-        // user.photoURL
-        // user.uid
-        document.getElementById("clientName").innerHTML = user.displayName;
-    }
-
-    // window.onload = login;
-
     database = firebase.firestore();
     const settings = {
         timestampsInSnapshots: true
@@ -87,3 +63,27 @@ function enableSlider(){
         }
     });
 }
+
+function login() {
+    function newLoginHappened(user) {
+        if (user) {
+            // User is signed in
+            app(user);
+        } else {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithRedirect(provider);
+        }
+    }
+
+    firebase.auth().onAuthStateChanged(newLoginHappened);
+}
+
+function app(user) {
+    // user.displayName
+    // user.email
+    // user.photoURL
+    // user.uid
+    document.getElementById("clientName").innerHTML = user.displayName;
+}
+
+// window.onload = login;
