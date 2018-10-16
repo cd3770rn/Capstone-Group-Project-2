@@ -3,7 +3,6 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link href="https://fonts.googleapis.com/css?family=Dosis:400,800" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
@@ -14,6 +13,7 @@
       <!-- Display name when signed in -->
       <h6>Hello <span id="clientName"></span></h6>
       <button onclick="login()">Sign in with Google</button>
+      <button onclick="logOut()">Log out</button>
 
       <div id="main-content">
         <h1>JIFF.LY</h1>
@@ -31,5 +31,51 @@
       </div>
     </main>
   </body>
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+
+  <script>
+
+      config = {
+          apiKey: "AIzaSyDHar8VdiUJPi5fnayZmc9pgyFyNhyAlxk",
+          authDomain: "twitter-search-wrapper.firebaseapp.com",
+          databaseURL: "https://twitter-search-wrapper.firebaseio.com",
+          projectId: "twitter-search-wrapper",
+          storageBucket: "twitter-search-wrapper.appspot.com",
+          messagingSenderId: "139961615979"
+      };
+
+      firebase.initializeApp(config);
+
+      function login() {
+          function newLoginHappened(user) {
+              if (user) {
+                  // User is signed in
+                  app(user);
+              } else {
+                  var provider = new firebase.auth.GoogleAuthProvider();
+                  firebase.auth().signInWithRedirect(provider);
+              }
+          }
+
+          firebase.auth().onAuthStateChanged(newLoginHappened);
+      }
+
+      function app(user) {
+          // user.email
+          // user.photoURL
+          // user.uid
+          document.getElementById("clientName").innerHTML = user.displayName;
+      }
+
+      function logOut() {
+          firebase.auth().signOut().then(function() {
+              // Sign-out successful.
+          }).catch(function(error) {
+              // An error happened.
+          });
+      }
+
+  </script>
 </html>
 
