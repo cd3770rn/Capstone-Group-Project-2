@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="/Capstone-Group-Project-2/assets/css/results.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis:400,800" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
@@ -12,12 +13,10 @@
     <main>
       <!-- Display name when signed in -->
       <div id="topbar">
-        <h1><a id="home" href="https://cd3770rn.github.io/Capstone-Group-Project-2">JIFF.LY</a></h1>
-        <a id="saved" href="saved.html">Saved images</a>
-        
-        <h6>Hello <span id="clientName"></span></h6>
-        <button onclick="login()">Sign in with Google</button>
-        <button onclick="logOut()">Log out</button>
+            <h6>Hello <span id="clientName"></span></h6>
+            <button onclick="login()">Sign in with Google</button>
+            <button onclick="logOut()">Log out</button>
+            <a id="saved" href="saved.html">Saved images</a>        
       </div>
       
       <div id="main-content">
