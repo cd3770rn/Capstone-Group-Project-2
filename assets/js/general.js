@@ -60,7 +60,6 @@ function initDatabase(){
     timestampsInSnapshots: true  
   };
   
-  database = firebase.firestore();
   database.settings(settings);
 }  
 
