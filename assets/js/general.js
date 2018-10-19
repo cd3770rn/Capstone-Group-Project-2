@@ -1,7 +1,7 @@
 let database;
 
 window.onload = function(){
-  initDatebase();
+  initDatabase();
 };
 
 // ====================
