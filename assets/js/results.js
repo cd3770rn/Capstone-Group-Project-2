@@ -62,7 +62,7 @@ function getUnsplash(input){
 
   xhr.done(function (response) {
       var imgs = response.data;
-      img = createIMG(imgURL);
+      img = createIMG(imgs.imgURL);
       $("main").append(img);
   });
 }
