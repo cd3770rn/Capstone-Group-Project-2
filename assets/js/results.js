@@ -61,9 +61,8 @@ function getUnsplash(input){
   let xhr = $.get(search);
 
   xhr.done(function (response) {
-    let imgs = response.data;
-    console.log(imgs);
-    img = createIMG(imgs.imgURL);
+    let imgs = response.data; // coming back as undefined
+    img = createIMG(imgURL); // causing error because imgs is undefined.
     $("main").append(img);
   });
 }
