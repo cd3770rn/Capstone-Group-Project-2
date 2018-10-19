@@ -3,25 +3,18 @@
 
 @import "{{ site.theme }}";
 
-$bg-color: #1370FB;
-$dot-color: #3882E8;
-
-$dot-size: 2px;
-$dot-space: 22px;
-
 html, body {
-    
+  margin: 0;
+  padding: 0;
 }
-
-
 
 body {
-	background:black;
-	background-size: $dot-space $dot-space;
+  background-color: black;  
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, a, p {
   font-family: 'Dosis', sans-serif;
+  font-weight: 800;
 }
 
 h1 {
@@ -31,6 +24,13 @@ h1 {
   text-shadow: 2px 2px #aa00ff, 0px 2px #d50000;
 }
 
+h2 {
+  font-size: 32px;
+  font-weight: 800;
+  padding-left: 3rem;
+  padding-top: 0.5rem;
+}
+
 #main-content {
   top: 20%;
   left: 40%;
@@ -38,7 +38,7 @@ h1 {
   padding: 1rem;
 }
 
-input[type=text]  {
+input[type=text] {
   padding: 8px;
   border: 1px solid #e3e3e3;
   border-radius: 10px;
@@ -93,55 +93,6 @@ input:focus, .btn:focus {
 	user-select: none;
 }
 
-#toggle-switch {
-    position: relative;
-    top: -0.5rem;
-    left: 5.5rem;
-}
-
-.lbl {
-  position: relative;
-  display: block;
-  height: 20px;
-  width: 44px;
-  background: #ccc;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.lbl:after {
-  position: absolute;
-  left: -2px;
-  top: -3px;
-  display: block;
-  width: 26px;
-  height: 26px;
-  border-radius: 100px;
-  background: #fff;
-  box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
-  content: '';
-  transition: all 0.3s ease;
-}
-
-.slider:checked ~ label {
-  background: #f1f1f1;
-}
-
-.slider:checked ~ label:after {
-  left: 20px;
-  background: #fff;
-}
-
-.slider:disabled ~ label {
-  background: #d5d5d5;
-  pointer-events: none;
-}
-
-.slider:disabled ~ label:after {
-  background: #bcbdbc;
-}
-
 .hidden {
   display: none;
 }
@@ -156,14 +107,29 @@ input:focus, .btn:focus {
 	-moz-transform: scale(50%);
 }
 
-.flickr-icon {
-	position: relative;
-    left: 3.5rem;
-    bottom: 1.35rem;
+a {
+  text-decoration: none;
+  color: #aa00ff;
+  user-select: none;
 }
 
-.giphy-icon {
-	position: relative;
-    right: 4.35rem;
-    top: 1.65rem;
+#topbar {
+  background: #f1f1f1;
+  height: 3.1rem;
+  border-bottom: 1px solid #ededed;
 }
+
+#saved {
+  top: 1rem;
+  right: 8rem;
+  position: absolute;
+  text-transform: lowercase;
+  font-size: 18px;
+}
+
+img {
+  padding: 10px; 
+  max-height: 250px;
+}
+
+
