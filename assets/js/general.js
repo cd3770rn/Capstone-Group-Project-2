@@ -2,12 +2,22 @@ let database;
 
 window.onload = function(){
   initDatabase();
-  console.log(user);
+  checkLogin();
 };
 
 // ====================
 // ===== AUTH =====
 // ====================
+
+function checkLogin() {
+  function newLoginHappened(user) {
+    console.log("New login!");
+    if (user) {
+      // User is signed in
+      console.log("User is signed in");
+      app(user);
+    } 
+}
 
 function login() {
   console.log("Login function");
