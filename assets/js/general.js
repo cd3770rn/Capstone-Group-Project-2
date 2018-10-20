@@ -53,7 +53,7 @@ function app(user) {
 function logOut() {
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
-      console.log("Sign-out successful.");
+      alert("Sign-out successful.");
       $(".action-bar").html("<button id='sign-in' class='lowercase font-18' onclick='login()'>Sign In</button>");
     }).catch(function(error) {
       // An error happened.
