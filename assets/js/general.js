@@ -31,7 +31,7 @@ function login() {
     } 
 
     else {
-      console.log(login.caller);
+      console.log(arguments.callee.caller.toString());
 //       let provider = new firebase.auth.GoogleAuthProvider();
 //       firebase.auth().signInWithRedirect(provider);
     }
