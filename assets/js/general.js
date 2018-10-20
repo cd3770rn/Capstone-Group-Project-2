@@ -17,6 +17,7 @@ function checkLogin() {
       console.log("User is signed in");
       app(user);
     } 
+  }
 }
 
 function login() {
