@@ -49,6 +49,8 @@ function app(user) {
     // user.email
     // user.photoURL
     // user.uid
+    currentUser = firebase.auth().currentUser;
+    console.log(currentUser);
     hideSignIn();
     document.getElementById("clientName").innerHTML = user.displayName;
 }
