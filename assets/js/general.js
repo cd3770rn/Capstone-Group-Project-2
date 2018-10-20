@@ -28,7 +28,7 @@ function app(user) {
     // user.email
     // user.photoURL
     // user.uid
-    $("#sign-in").replaceWith("<button id='sign-out' class='lowercase font-18' onclick='logOut()'>Sign Out</button>");
+    $(".action-bar").html("<button class='lowercase font-18' onclick='saved.html'>Saved images</button><button id='sign-out' class='lowercase font-18' onclick='logOut()'>Sign Out</button>");
     console.log(user);
     document.getElementById("clientName").innerHTML = user.displayName;
 }
@@ -37,7 +37,7 @@ function logOut() {
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
       console.log("Sign-out successful.");
-      $("#sign-out").replaceWith("<button id='sign-in' class='lowercase font-18' onclick='login()'>Sign In</button>");
+      $(".action-bar").html("<button id='sign-in' class='lowercase font-18' onclick='login()'>Sign In</button>");
     }).catch(function(error) {
       // An error happened.
       alert("An error occurred while attempting to sign out.");
