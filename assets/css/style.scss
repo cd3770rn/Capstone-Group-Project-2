@@ -132,4 +132,23 @@ img {
   max-height: 250px;
 }
 
+.font-18 {	
+	font-size: 18px;
+}
+
+.lowercase {	
+	text-transform: lowercase;
+}
+
+.action-bar {	
+	top: 1rem;
+	right: 8rem;
+	position: absolute;
+}
+
+button {
+	border: none;
+	background: none;
+	color: #aa00ff;
+}
 
