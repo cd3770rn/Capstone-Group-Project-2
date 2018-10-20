@@ -11,7 +11,7 @@ window.onload = function(){
 // ===================
 
 function hideSignIn() {
-  $(".action-bar").html("<button class='lowercase font-18' onclick='/Capstone-Group-Project-2/saved.html'>Saved images</button><button id='sign-out' class='lowercase font-18' onclick='logOut()'>Sign Out</button>");
+  $(".action-bar").html("<button class='lowercase font-18' onclick='setURL(" + "https://cd3770rn.github.io/Capstone-Group-Project-2/saved.html" + "'>Saved images</button><button id='sign-out' class='lowercase font-18' onclick='logOut()'>Sign Out</button>");
 }
 
 function showSignIn() {
