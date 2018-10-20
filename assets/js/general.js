@@ -33,14 +33,12 @@ function checkUser() {
 function login() {
   console.log("Top of login");
   function newLoginHappened(user) {
-    console.log("New login");
     if (user) {
       // User is signed in
       app(user);
     } 
 
     else {
-      console.log("Logging in...");
       let provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
         .then(function() {
@@ -57,7 +55,10 @@ function login() {
         });
       }
     }
-  console.log(firebase.auth().currentUser);
+  if (firebase.auth().currentUser) {
+    hideLogin();
+    return;
+  }
   firebase.auth().onAuthStateChanged(newLoginHappened);
 }
 
