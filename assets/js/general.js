@@ -3,7 +3,7 @@ let currentUser;
 
 window.onload = function(){
   initDatabase();
-  checkUser();
+  login();
 };
 
 // ===================
