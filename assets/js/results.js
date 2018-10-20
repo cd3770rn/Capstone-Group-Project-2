@@ -1,8 +1,9 @@
 window.onload = function() {
+  initDatabase();
+  login();
+  
   let params = parseURL();
-  console.log(params)
   populatePage(params);
-  console.log("should have populated page");
 }
   
 function parseURL(){
