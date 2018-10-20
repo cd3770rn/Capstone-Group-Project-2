@@ -1,6 +1,8 @@
 window.onload = function() {
   let params = parseURL();
+  console.log(params)
   populatePage(params);
+  console.log("should have populated page");
 }
   
 function parseURL(){
