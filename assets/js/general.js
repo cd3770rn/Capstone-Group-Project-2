@@ -2,6 +2,7 @@ let database;
 
 window.onload = function(){
   initDatabase();
+  console.log(user);
 };
 
 // ====================
