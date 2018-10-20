@@ -56,7 +56,7 @@ function login() {
       }
     }
   if (firebase.auth().currentUser) {
-    hideLogin();
+    hideSignIn();
     return;
   }
   firebase.auth().onAuthStateChanged(newLoginHappened);
