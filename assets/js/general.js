@@ -22,16 +22,7 @@ function showSignIn() {
 // ===== AUTH =====
 // ================
 
-function checkUser() {
-  currentUser = firebase.auth().currentUser;
-  console.log(currentUser);
-  if (currentUser) {
-    hideSignIn();  
-  }
-}
-
 function login() {
-  console.log("Top of login");
   function newLoginHappened(user) {
     if (user) {
       // User is signed in
@@ -55,6 +46,8 @@ function login() {
         });
       }
     }
+  
+  // If user login persisted, hide the 'Login' button.
   if (firebase.auth().currentUser) {
     hideSignIn();
     return;
