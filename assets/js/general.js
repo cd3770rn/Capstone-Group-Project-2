@@ -41,11 +41,10 @@ function login() {
       let provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
         .then(function() {
-          // Existing and future Auth states are now persisted in the current
-          // session only. Closing the window would clear any existing state even
-          // if a user forgets to sign out.
+          // Existing and future Auth states are now persisted even when the 
+          // browser window is closed.
           // ...
-          // New sign-in will be persisted with session persistence.
+          // New sign-in will be persisted.
           return firebase.auth().signInWithRedirect(provider);
         })
         .catch(function(error) {
@@ -55,15 +54,15 @@ function login() {
         });
       }
     }
-  firebase.auth().onAuthStateChanged(newLoginHappened);
+  firebase.auth().onAuthStateChanged(function() {
+    return newLoginHappened;
+  });
 }
 
 function app(user) {
     // user.email
     // user.photoURL
     // user.uid
-    currentUser = firebase.auth().currentUser;
-    console.log(currentUser);
     hideSignIn();
     document.getElementById("clientName").innerHTML = user.displayName;
 }
