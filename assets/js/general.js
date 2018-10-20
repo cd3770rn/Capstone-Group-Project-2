@@ -1,5 +1,5 @@
 let database;
-let currentUser = firebase.auth().currentUser;
+let currentUser;
 
 window.onload = function(){
   initDatabase();
@@ -23,6 +23,8 @@ function showSignIn() {
 // ================
 
 function checkUser() {
+  currentUser = firebase.auth().currentUser;
+  console.log(currentUser);
   if (currentUser) {
     hideSignIn();  
   }
