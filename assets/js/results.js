@@ -79,9 +79,12 @@ function populatePage(input) {
 }
 
 function imgHover() {
+  console.log("adding hover");
   $("img").hover(function() {
+    console.log("Hover in");
     $(this).closest(".img-container").prepend("<div class='img-overlay'><div class='add-icon'></div></div>");
   }, function() {
+    console.log("Hover out");
     $(this).closest(".img-container").find(".img-overlay").remove();
   });
 }
