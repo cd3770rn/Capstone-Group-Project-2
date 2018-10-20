@@ -2,7 +2,6 @@ let database;
 
 window.onload = function(){
   initDatabase();
-  login();
 };
 
 // ====================
@@ -11,32 +10,25 @@ window.onload = function(){
 
 function checkLogin() {
   function newLoginHappened(user) {
-    console.log("New login!");
     if (user) {
       // User is signed in
-      console.log("User is signed in");
       app(user);
     } 
   }
 }
 
 function login() {
-  console.log("Login function");
   function newLoginHappened(user) {
-    console.log("New login!");
     if (user) {
       // User is signed in
-      console.log("User is signed in");
       app(user);
     } 
 
     else {
-      console.log(arguments.callee.caller.toString());
-//       let provider = new firebase.auth.GoogleAuthProvider();
-//       firebase.auth().signInWithRedirect(provider);
+      let provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithRedirect(provider);
     }
   }
-console.log("Auth state about to change");
 firebase.auth().onAuthStateChanged(newLoginHappened);
 }
 
@@ -44,9 +36,7 @@ function app(user) {
     // user.email
     // user.photoURL
     // user.uid
-    console.log("Updating action bar");
     $(".action-bar").html("<button class='lowercase font-18' onclick='saved.html'>Saved images</button><button id='sign-out' class='lowercase font-18' onclick='logOut()'>Sign Out</button>");
-    console.log(user);
     document.getElementById("clientName").innerHTML = user.displayName;
 }
 
