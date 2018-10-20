@@ -28,6 +28,7 @@ function app(user) {
     // user.email
     // user.photoURL
     // user.uid
+    console.log(user);
     document.getElementById("clientName").innerHTML = user.displayName;
 }
 
