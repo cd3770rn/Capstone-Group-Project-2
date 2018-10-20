@@ -14,15 +14,17 @@
       <!-- Display name when signed in -->
       <div id="topbar">
         <span id="clientName"></span>
-        <button onclick="login()">
-          Sign in with Google
-        </button>
-        <button onclick="logOut()">
-          Log out
-        </button>
-        <a id="saved" href="saved.html">
-          Saved images
-        </a>        
+        <div class="action-bar">
+          <button class="lowercase font-18" onclick="login()">
+            Sign In
+          </button>
+          <button class="lowercase font-18" onclick="logOut()">
+            Sign Out
+          </button>
+          <button class="lowercase font-18" onclick="saved.html">
+            Saved images
+          </button>
+        </div>
       </div>
       <div id="main-content">
         <h1>JIFF.LY</h1>
