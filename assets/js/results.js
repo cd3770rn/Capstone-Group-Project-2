@@ -4,7 +4,7 @@ window.onload = function() {
   
   let params = parseURL();
   populatePage(params);
-  imgHover();
+  //imgHover();
 }
   
 function parseURL(){
@@ -18,10 +18,11 @@ function parseURL(){
 function createIMG(url) {
   // Cleaner way of creating an <img> tag than doing it all in one line
   let divStart = "<div class='img-container'>"
+  let overlay = "<div class='img-overlay'><div class='add-icon'></div></div>"
   let tagStart = "<img src='";
   let tagEnd = "'/>";
   let divEnd = "</div>";
-  let img = divStart + tagStart + url + tagEnd + divEnd;
+  let img = divStart + overlay + tagStart + url + tagEnd + divEnd;
   return img;
 }
 
@@ -80,13 +81,13 @@ function populatePage(input) {
   getUnsplash(input);
 }
 
-function imgHover() {
-  console.log("adding hover");
-  $("img").hover(function() {
-    console.log("Hover in");
-    $(this).closest(".img-container").prepend("<div class='img-overlay'><div class='add-icon'></div></div>");
-  }, function() {
-    console.log("Hover out");
-    $(this).closest(".img-container").find(".img-overlay").remove();
-  });
-}
+// function imgHover() {
+//   console.log("adding hover");
+//   $("img").hover(function() {
+//     console.log("Hover in");
+//     $(this).closest(".img-container").prepend("<div class='img-overlay'><div class='add-icon'></div></div>");
+//   }, function() {
+//     console.log("Hover out");
+//     $(this).closest(".img-container").find(".img-overlay").remove();
+//   });
+// }
