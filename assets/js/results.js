@@ -16,9 +16,11 @@ function parseURL(){
   
 function createIMG(url) {
   // Cleaner way of creating an <img> tag than doing it all in one line
+  let divStart = "<div class='img-container'>"
   let tagStart = "<img src='";
   let tagEnd = "'/>";
-  let img = tagStart + url + tagEnd;
+  let divEnd = "</div>"
+  let img = divStart + tagStart + url + tagEnd + divEnd;
   return img;
 }
 
