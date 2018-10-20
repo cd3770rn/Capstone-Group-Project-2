@@ -1,23 +1,41 @@
 window.onload = function() {
   let params = parseURL();
-  getFlickr(params);
+  populatePage(params);
 }
-
-
+  
 function parseURL(){
+  // This will remove all of the unwanted characters from the URL and just give you the query string at the end.
   let url = window.location.search; // get url
   url = url.replace("?query=", ""); //remove fluff
   url = url.split("+").join(" "); // convert all + to " " so: cats+and+dogs --> cats and dogs
   return url;
 }
-
+  
 function createIMG(url) {
+  // Cleaner way of creating an <img> tag than doing it all in one line
   let tagStart = "<img src='";
   let tagEnd = "'/>";
   let img = tagStart + url + tagEnd;
   return img;
 }
 
+// API #1 -- Giphy
+function getGiphy(input){
+  let quantity = "10";
+  let search = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=" + quantity;
+  let xhr = $.get(search);
+  
+  xhr.done(function (response) {
+      var jiffs = response.data;
+      for (i in jiffs){
+        let imgURL = jiffs[i].images.original.url;
+        img = createIMG(imgURL);
+        $("main").append(img);
+      }
+  });
+}
+
+// API #2 -- Flickr
 function getFlickr(input) {
   let flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
   let resultCount = 10;
@@ -35,4 +53,18 @@ function getFlickr(input) {
   }).fail(function (xhr, status, error) {
       alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
   });
+}
+
+// API #3 -- Unsplash
+function getUnsplash(input){
+  var input = $("searchtext").val();
+  var xhr = "https://source.unsplash.com/category/" + input + "/350x350"
+  $('.inner').append("<img src='"+xhr+"'/>");
+}
+
+function populatePage(input) {
+  // TODO: Make this multithreaded.
+  getGiphy(input);
+  getFlickr(input);
+  getUnsplash(input);
 }
