@@ -1,19 +1,30 @@
 let database;
+let currentUser = firebase.auth().currentUser;
 
 window.onload = function(){
   initDatabase();
+  checkUser();
 };
 
-// ====================
-// ===== AUTH =====
-// ====================
+// ===================
+// ===== GENERIC =====
+// ===================
 
-function checkLogin() {
-  function newLoginHappened(user) {
-    if (user) {
-      // User is signed in
-      app(user);
-    } 
+function hideSignIn() {
+  $(".action-bar").html("<button class='lowercase font-18' onclick='saved.html'>Saved images</button><button id='sign-out' class='lowercase font-18' onclick='logOut()'>Sign Out</button>");
+}
+
+function showSignIn() {
+  $(".action-bar").html("<button id='sign-in' class='lowercase font-18' onclick='login()'>Sign In</button>");
+}
+
+// ================
+// ===== AUTH =====
+// ================
+
+function checkUser() {
+  if (currentUser) {
+    hideSignIn();  
   }
 }
 
@@ -36,7 +47,7 @@ function app(user) {
     // user.email
     // user.photoURL
     // user.uid
-    $(".action-bar").html("<button class='lowercase font-18' onclick='saved.html'>Saved images</button><button id='sign-out' class='lowercase font-18' onclick='logOut()'>Sign Out</button>");
+    hideSignIn();
     document.getElementById("clientName").innerHTML = user.displayName;
 }
 
@@ -44,7 +55,7 @@ function logOut() {
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
       alert("Sign-out successful.");
-      $(".action-bar").html("<button id='sign-in' class='lowercase font-18' onclick='login()'>Sign In</button>");
+      showSignIn();
     }).catch(function(error) {
       // An error happened.
       alert("An error occurred while attempting to sign out.");
