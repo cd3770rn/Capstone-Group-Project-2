@@ -68,7 +68,6 @@ function app(user) {
     // user.photoURL
     // user.uid
     hideSignIn();
-    document.getElementById("clientName").innerHTML = user.displayName;
 }
 
 function logOut() {
