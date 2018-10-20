@@ -2,7 +2,7 @@ let database;
 
 window.onload = function(){
   initDatabase();
-  checkLogin();
+  login();
 };
 
 // ====================
