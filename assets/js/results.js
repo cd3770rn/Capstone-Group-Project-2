@@ -80,7 +80,7 @@ function populatePage(input) {
 
 function imgHover() {
   $("img").hover(function() {
-    $(this).closest(".img-container").prepend("<div class='img-overlay'><div class='add-icon'></div></div>"
+    $(this).closest(".img-container").prepend("<div class='img-overlay'><div class='add-icon'></div></div>");
   }, function() {
     $(this).closest(".img-container").find(".img-overlay").remove();
   });
