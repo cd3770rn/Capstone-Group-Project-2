@@ -4,6 +4,7 @@ window.onload = function() {
   
   let params = parseURL();
   populatePage(params);
+  imgHover();
 }
   
 function parseURL(){
@@ -16,11 +17,9 @@ function parseURL(){
   
 function createIMG(url) {
   // Cleaner way of creating an <img> tag than doing it all in one line
-  let divStart = "<div class='img-container'>"
   let tagStart = "<img src='";
   let tagEnd = "'/>";
-  let divEnd = "</div>"
-  let img = divStart + tagStart + url + tagEnd + divEnd;
+  let img = tagStart + url + tagEnd;
   return img;
 }
 
@@ -77,4 +76,12 @@ function populatePage(input) {
   getGiphy(input);
   getFlickr(input);
   getUnsplash(input);
+}
+
+function imgHover() {
+  $("img").hover(function() {
+    $(this).closest(".img-container").prepend("<div class='img-overlay'><div class='add-icon'></div></div>"
+  }, function() {
+    $(this).closest(".img-container").find(".img-overlay").remove();
+  });
 }
