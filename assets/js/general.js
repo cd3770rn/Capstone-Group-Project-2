@@ -18,6 +18,10 @@ function showSignIn() {
   $(".action-bar").html("<button id='sign-in' class='lowercase font-18' onclick='login()'>Sign In</button>");
 }
 
+function setURL(url) {
+  document.location.href = url;
+}
+
 // ================
 // ===== AUTH =====
 // ================
