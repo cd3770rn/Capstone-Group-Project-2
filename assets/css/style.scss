@@ -152,3 +152,10 @@ button {
 	color: #aa00ff;
 }
 
+button:hover {
+	color: rgb(125, 0, 188);
+}
+
+button:focus {	
+	outline: none;
+}
