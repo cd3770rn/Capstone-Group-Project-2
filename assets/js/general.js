@@ -39,8 +39,8 @@ function login() {
       app(user);
     } 
 
-    console.log("Logging in...");
     else {
+      console.log("Logging in...");
       let provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
         .then(function() {
