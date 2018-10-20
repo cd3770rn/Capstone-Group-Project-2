@@ -31,8 +31,9 @@ function login() {
     } 
 
     else {
-      let provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithRedirect(provider);
+      console.log($(this).caller);
+//       let provider = new firebase.auth.GoogleAuthProvider();
+//       firebase.auth().signInWithRedirect(provider);
     }
   }
 console.log("Auth state about to change");
