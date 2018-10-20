@@ -161,3 +161,11 @@ button:hover {
 button:focus {	
 	outline: none;
 }
+
+.img-overlay, .add-icon {	
+	opacity: 0;
+}
+
+.img-overlay:hover, .add-icon:hover {
+	opacity: 1;
+}
