@@ -38,17 +38,6 @@ function sizeImgOverlay() {
       let targetWidth = $(images[i]).find("img").width();
       $(images[i]).find(".img-overlay").width(targetWidth);
     }
-    
-//     let targetWidth;
-//     $(".img-overlay").each(function(){
-//       let img = $(".img-overlay").closest(".img-container").find("img");
-//       console.log(img.width());
-//       console.log(img.height());
-//       targetWidth = $(".img-overlay").closest(".img-container").find("img").width();
-//       $(this).width(targetWidth);
-//       console.log($(this).width());
-//       console.log("===");
-//     })
   }
 }
 
