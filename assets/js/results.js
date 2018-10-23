@@ -8,7 +8,7 @@ window.onload = function() {
   populatePage(params);
   setTimeout(function() {
     sizeImgOverlay();
-  }, 3000);
+  }, 1000);
 }
   
 function parseURL(){
@@ -51,7 +51,7 @@ function getFlickr(input) {
   let flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
   let resultCount = 10;
   $.getJSON(flickerAPI, {
-      tags: $("#search2").val(),
+      tags: input,
       tagmode: "any",
       format: "json"
   }).done(function (result, status, xhr) {
