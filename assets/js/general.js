@@ -4,7 +4,6 @@ let currentUser;
 window.onload = function(){
   initDatabase();
   login();
-  sizeImgOverlay();
 };
 
 // ===================
