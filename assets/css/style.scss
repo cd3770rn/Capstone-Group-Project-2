@@ -169,7 +169,6 @@ button:focus {
 .img-overlay {
 	position: absolute;
 	margin: 4px;
-	background: red;
 	height: 10%;
 }
 
@@ -184,14 +183,11 @@ button:focus {
 	opacity: 0;
 }
 
-.img-overlay:hover, .add-icon:hover {
+.img-container:hover .add-icon {
 	opacity: 1;
 }
 
 .img-container:hover .img-overlay {
-	background: linear-gradient(rgba(10,10,10,1), rgba(10,10,10,0));
+	background-image: -webkit-gradient(linear, 0 0, 0 50%, from(#1a1a1a), to(transparent));
 }
 
-// .img-overlay:hover {
-// 	background: linear-gradient(rgba(10,10,10,1), rgba(10,10,10,0));
-// }
