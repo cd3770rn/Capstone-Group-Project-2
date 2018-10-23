@@ -34,7 +34,7 @@ function sizeImgOverlay() {
   if (getPage() == "results.html" || getPage() == "saved.html") {
     let targetWidth;
     $(".img-overlay").each(function(){
-      console.log($(".img-overlay").closest(".img-container").find("img"));
+      console.log($(".img-overlay").closest(".img-container").find("img").width());
       targetWidth = $(".img-overlay").closest("img").width();
       console.log(targetWidth);
       $(this).width = targetWidth;
