@@ -4,6 +4,7 @@ let currentUser;
 window.onload = function(){
   initDatabase();
   login();
+  sizeImgOverlay();
 };
 
 // ===================
@@ -22,8 +23,19 @@ function getSaved() {
   setURL("https://cd3770rn.github.io/Capstone-Group-Project-2/saved.html");  
 }
 
+function getPage(){
+  return location.pathname.split("/").pop();
+}
+
 function setURL(url) {
   document.location.href = url;
+}
+
+function sizeImgOverlay() {
+  if (getPage() == "results.html" || getPage() == "saved.html") {
+    let targetWidth = $(".img-overlay").closest("img").width();
+    $(".img-overlay").width(targetWidth);
+  }
 }
 
 // ================
