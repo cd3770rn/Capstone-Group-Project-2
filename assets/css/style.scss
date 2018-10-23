@@ -188,7 +188,7 @@ button:focus {
 	opacity: 1;
 }
 
-.img-container:hover + .img-overlay {
+.img-container:hover .img-overlay {
 	background: linear-gradient(rgba(10,10,10,1), rgba(10,10,10,0));
 }
 
