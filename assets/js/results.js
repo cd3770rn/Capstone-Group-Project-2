@@ -12,6 +12,7 @@ window.onload = function() {
 }
   
 $("img").load(function() {
+  console.log("<img> loaded.");
   console.log($(this));
 });
 
