@@ -31,10 +31,13 @@ function setURL(url) {
 }
 
 function sizeImgOverlay() {
-  console.log(getPage()); 
   if (getPage() == "results.html" || getPage() == "saved.html") {
-    let targetWidth = $(".img-overlay").closest("img").width();
-    $(".img-overlay").width(targetWidth);
+    console.log(true)
+    let targetWidth;
+    $(".img-overlay").each(function(){
+      targetWidth = $(".img-overlay").closest("img").width();
+      $(this).width = targetWidth;
+    })
   }
 }
 
