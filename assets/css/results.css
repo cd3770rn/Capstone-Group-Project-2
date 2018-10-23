@@ -39,8 +39,12 @@ a {
   font-size: 18px;
 }
 
+.img-container {
+  display: inline-block;  
+}
+
 img {
-  padding: 10px; 
+  padding: 4px; 
   max-height: 250px;
 }
 
