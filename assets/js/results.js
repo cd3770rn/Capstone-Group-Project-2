@@ -1,11 +1,11 @@
 
 
 window.onload = function() {
+  let params = parseURL();
+  populatePage(params);
   initDatabase();
   login();
   
-  let params = parseURL();
-  populatePage(params);
   setTimeout(function() {
     sizeImgOverlay();
   }, 1500);
