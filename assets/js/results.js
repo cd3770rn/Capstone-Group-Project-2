@@ -6,16 +6,11 @@ window.onload = function() {
   
   let params = parseURL();
   populatePage(params);
-//   setTimeout(function() {
-//     sizeImgOverlay();
-//   }, 1500);
+  setTimeout(function() {
+    sizeImgOverlay();
+  }, 1500);
 }
   
-$("img").live('load', function() {
-  console.log("<img> loaded.");
-  console.log($(this));
-});
-
 function parseURL(){
   // This will remove all of the unwanted characters from the URL and just give you the query string at the end.
   let url = window.location.search; // get url
