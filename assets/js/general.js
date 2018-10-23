@@ -36,7 +36,9 @@ function sizeImgOverlay() {
     let images = $(".img-container");
     for (let i = 0; i < images.length; i++){
       let targetWidth = $(images[i]).find("img").width();
+      let targetHeight = $(images[i]).find("img").height();
       $(images[i]).find(".img-overlay").width(targetWidth);
+      $(images[i]).find(".img-overlay").height(targetHeight)
     }
   }
 }
