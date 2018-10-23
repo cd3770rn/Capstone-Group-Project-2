@@ -58,7 +58,8 @@ function getFlickr(input) {
       console.log(result);
       console.log(result.items);
       $.each(result.items, function (i, item) {
-          $("<img>").attr("src", item.media.m).appendTo("main");
+          createIMG(item.media.m);
+//           $("<img>").attr("src", item.media.m).appendTo("main");
           if (i === resultCount) {
               return false;
           }
