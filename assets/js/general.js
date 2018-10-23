@@ -48,7 +48,7 @@ function sizeImgOverlay() {
 //       console.log($(this).width());
 //       console.log("===");
 //     })
-//   }
+  }
 }
 
 // ================
