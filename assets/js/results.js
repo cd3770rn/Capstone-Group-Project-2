@@ -3,11 +3,10 @@
 window.onload = function() {
   initDatabase();
   login();
-  sizeImgOverlay();
   
   let params = parseURL();
   populatePage(params);
-  //imgHover();
+  sizeImgOverlay();
 }
   
 function parseURL(){
