@@ -162,6 +162,18 @@ button:focus {
 	outline: none;
 }
 
+.img-overlay {
+	position: absolute;
+	margin: 10px;
+	background: red;
+}
+
+.add-icon {
+	background: yellow;
+	width: 25px;
+	height: 25px;
+}
+
 .img-overlay, .add-icon {	
 	opacity: 0;
 }
