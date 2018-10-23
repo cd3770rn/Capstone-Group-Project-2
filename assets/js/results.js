@@ -61,13 +61,6 @@ function getFlickr(input) {
         img = createIMG(imgURL);
         $("main").append(img);
       }
-//       $.each(result.items, function (i, item) {
-//           createIMG(item.media.m);
-// //           $("<img>").attr("src", item.media.m).appendTo("main");
-//           if (i === resultCount) {
-//               return false;
-//           }
-//       });
   }).fail(function (xhr, status, error) {
       alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
   });
@@ -92,13 +85,3 @@ function populatePage(input) {
   //getUnsplash(input);
 }
 
-// function imgHover() {
-//   console.log("adding hover");
-//   $("img").hover(function() {
-//     console.log("Hover in");
-//     $(this).closest(".img-container").prepend("<div class='img-overlay'><div class='add-icon'></div></div>");
-//   }, function() {
-//     console.log("Hover out");
-//     $(this).closest(".img-container").find(".img-overlay").remove();
-//   });
-// }
