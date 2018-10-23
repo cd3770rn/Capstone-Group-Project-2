@@ -36,6 +36,7 @@ function sizeImgOverlay() {
     let targetWidth;
     $(".img-overlay").each(function(){
       targetWidth = $(".img-overlay").closest("img").width();
+      console.log(targetWidth);
       $(this).width = targetWidth;
     })
   }
