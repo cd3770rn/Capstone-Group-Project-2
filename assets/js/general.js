@@ -32,17 +32,23 @@ function setURL(url) {
 
 function sizeImgOverlay() {
   if (getPage() == "results.html" || getPage() == "saved.html") {
-    let targetWidth;
-    $(".img-overlay").each(function(){
-      let img = $(".img-overlay").closest(".img-container").find("img");
-      console.log(img.width());
-      console.log(img.height());
-      targetWidth = $(".img-overlay").closest(".img-container").find("img").width();
-      $(this).width(targetWidth);
-      console.log($(this).width());
-      console.log("===");
-    })
-  }
+    
+    let images = $(".img-container");
+    for (let i = 0; i < images.length; i++){
+      console.log($(images[i]).find("img"));  
+    }
+    
+//     let targetWidth;
+//     $(".img-overlay").each(function(){
+//       let img = $(".img-overlay").closest(".img-container").find("img");
+//       console.log(img.width());
+//       console.log(img.height());
+//       targetWidth = $(".img-overlay").closest(".img-container").find("img").width();
+//       $(this).width(targetWidth);
+//       console.log($(this).width());
+//       console.log("===");
+//     })
+//   }
 }
 
 // ================
