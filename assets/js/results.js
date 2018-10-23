@@ -6,7 +6,7 @@ window.onload = function() {
   
   let params = parseURL();
   populatePage(params);
-  setTimeout(function{
+  setTimeout(function() {
     sizeImgOverlay();
   }, 3000);
 }
