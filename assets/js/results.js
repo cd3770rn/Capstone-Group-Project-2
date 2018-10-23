@@ -55,6 +55,8 @@ function getFlickr(input) {
       tagmode: "any",
       format: "json"
   }).done(function (result, status, xhr) {
+      console.log(result);
+      console.log(result.items);
       $.each(result.items, function (i, item) {
           $("<img>").attr("src", item.media.m).appendTo("main");
           if (i === resultCount) {
