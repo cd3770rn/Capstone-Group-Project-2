@@ -8,7 +8,7 @@ window.onload = function() {
   
   setTimeout(function() {
     sizeImgOverlay();
-  }, 2000);
+  }, 3000);
 }
   
 function parseURL(){
