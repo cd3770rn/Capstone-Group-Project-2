@@ -170,6 +170,7 @@ button:focus {
 	position: absolute;
 	margin: 4px;
 	background: red;
+	height: 10%;
 }
 
 .add-icon {
@@ -187,7 +188,10 @@ button:focus {
 	opacity: 1;
 }
 
+.img-container:hover + .img-overlay {
+	background: linear-gradient(rgba(10,10,10,1), rgba(10,10,10,0));
+}
+
 .img-overlay:hover {
 	background: linear-gradient(rgba(10,10,10,1), rgba(10,10,10,0));
-	height: 10%;	
 }
