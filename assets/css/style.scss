@@ -179,9 +179,14 @@ button:focus {
 }
 
 .img-overlay, .add-icon {	
-	opacity: 1;
+	opacity: 0;
 }
 
 .img-overlay:hover, .add-icon:hover {
 	opacity: 1;
+}
+
+.img-overlay:hover {
+	background: linear-gradient(rgba(10,10,10,1), rgba(10,10,10,0));
+	height: 10%;	
 }
