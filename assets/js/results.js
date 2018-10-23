@@ -56,8 +56,8 @@ function getFlickr(input) {
       format: "json"
   }).done(function (result, status, xhr) {
       console.log(result.items);
-      for (i in results.items){
-        let imgURL = results.items[i].media.m;
+      for (i in result.items){
+        let imgURL = result.items[i].media.m;
         img = createIMG(imgURL);
         $("main").append(img);
       }
