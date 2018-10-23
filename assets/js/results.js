@@ -11,7 +11,7 @@ window.onload = function() {
 //   }, 1500);
 }
   
-$("img").on('load', function() {
+$("img").live('load', function() {
   console.log("<img> loaded.");
   console.log($(this));
 });
