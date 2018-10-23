@@ -6,7 +6,6 @@ window.onload = function() {
   
   let params = parseURL();
   populatePage(params);
-  sizeImgOverlay();
 }
   
 function parseURL(){
@@ -81,6 +80,7 @@ function populatePage(input) {
   getGiphy(input);
   getFlickr(input);
   //getUnsplash(input);
+  sizeImgOverlay();
 }
 
 // function imgHover() {
