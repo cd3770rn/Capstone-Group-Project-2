@@ -55,15 +55,19 @@ function getFlickr(input) {
       tagmode: "any",
       format: "json"
   }).done(function (result, status, xhr) {
-      console.log(result);
       console.log(result.items);
-      $.each(result.items, function (i, item) {
-          createIMG(item.media.m);
-//           $("<img>").attr("src", item.media.m).appendTo("main");
-          if (i === resultCount) {
-              return false;
-          }
-      });
+      for (i in results.items){
+        let imgURL = results.items[i].media.m;
+        img = createIMG(imgURL);
+        $("main").append(img);
+      }
+//       $.each(result.items, function (i, item) {
+//           createIMG(item.media.m);
+// //           $("<img>").attr("src", item.media.m).appendTo("main");
+//           if (i === resultCount) {
+//               return false;
+//           }
+//       });
   }).fail(function (xhr, status, error) {
       alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
   });
