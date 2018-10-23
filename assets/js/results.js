@@ -1,3 +1,5 @@
+
+
 window.onload = function() {
   initDatabase();
   login();
@@ -62,23 +64,23 @@ function getFlickr(input) {
   });
 }
 
-// API #3 -- Unsplash
-function getUnsplash(input){
-  let search = "https://source.unsplash.com/category/" + input
-  let xhr = $.get(search);
+// // API #3 -- Unsplash
+// function getUnsplash(input){
+//   let search = "https://source.unsplash.com/category/" + input
+//   let xhr = $.get(search);
 
-  xhr.done(function (response) {
-    let imgs = response.data; // coming back as undefined
-    img = createIMG(imgURL); // causing error because imgs is undefined.
-    $("main").append(img);
-  });
-}
+//   xhr.done(function (response) {
+//     let imgs = response.data; // coming back as undefined
+//     img = createIMG(imgURL); // causing error because imgs is undefined.
+//     $("main").append(img);
+//   });
+// }
 
 function populatePage(input) {
   // TODO: Make this multithreaded.
   getGiphy(input);
   getFlickr(input);
-  getUnsplash(input);
+  //getUnsplash(input);
 }
 
 // function imgHover() {
