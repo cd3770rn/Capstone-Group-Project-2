@@ -32,10 +32,10 @@ function setURL(url) {
 
 function sizeImgOverlay() {
   if (getPage() == "results.html" || getPage() == "saved.html") {
-    console.log(true)
     let targetWidth;
-    console.log($(".img-overlay"));
     $(".img-overlay").each(function(){
+      console.log($(".img-overlay").closest("img"));
+      console.log($(".img-overlay").find("img"));
       targetWidth = $(".img-overlay").closest("img").width();
       console.log(targetWidth);
       $(this).width = targetWidth;
