@@ -190,5 +190,6 @@ button:focus {
 .img-container:hover .img-overlay {
 	opacity: 1!important;
 	background-image: -webkit-gradient(linear, 0 0, 0 50%, from(black), to(transparent));
+	transition: 0.3s;
 }
 
