@@ -168,7 +168,7 @@ button:focus {
 
 .img-overlay {
 	position: absolute;
-	margin: 10px;
+	margin: 4px;
 	background: red;
 }
 
@@ -179,7 +179,7 @@ button:focus {
 }
 
 .img-overlay, .add-icon {	
-	opacity: 0;
+	opacity: 1;
 }
 
 .img-overlay:hover, .add-icon:hover {
