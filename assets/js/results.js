@@ -89,3 +89,11 @@ function populatePage(input) {
 //   getUnsplash(input);
 }
 
+function giphyWorker() {
+  if (window.Worker) {
+    console.log('Mr. Giphy is ready to work!');
+    worker = new Worker('worker-giphy.js');
+    worker.postMessage('Get Giphy!');
+  }
+}
+
