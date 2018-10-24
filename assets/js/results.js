@@ -40,7 +40,7 @@ function getGiphy(input){
       for (i in jiffs){
         let imgURL = jiffs[i].images.original.url;
         img = createIMG(imgURL);
-        $("main").append(img);
+        $("#img-stack").append(img);
       }
   });
 }
@@ -57,7 +57,7 @@ function getFlickr(input) {
       for (i in result.items){
         let imgURL = result.items[i].media.m;
         img = createIMG(imgURL);
-        $("main").append(img);
+        $("#img-stack").append(img);
       }
   }).fail(function (xhr, status, error) {
       alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
