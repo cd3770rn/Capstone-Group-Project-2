@@ -68,9 +68,9 @@ function getFlickr(input) {
 function getUnsplash(input){
   // TODO: Put this in a loop so you get more than 1 image out of it. 
   let resultCount = 10;
-  
+  let xhr;
   for (let i = 0; i < resultCount; i++){
-    let xhr = "https://source.unsplash.com/featured/?" + input;
+    xhr = "https://source.unsplash.com/featured/?" + input;
     img = createIMG(xhr);
     $("#img-stack").append(img);
   }
