@@ -115,6 +115,11 @@ a {
   user-select: none;
 }
 
+a#home {
+  text-shadow: black 2px 2px;
+  padding-left: 10pt;
+}
+
 #topbar {
   background: #f1f1f1;
   height: 3.1rem;
