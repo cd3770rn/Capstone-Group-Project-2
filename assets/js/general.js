@@ -43,6 +43,10 @@ function sizeImgOverlay() {
   }
 }
 
+function hideAnimation() {
+  $(".loading-animation").attr('class', 'loading-animation closed');  
+}
+
 // ================
 // ===== AUTH =====
 // ================
