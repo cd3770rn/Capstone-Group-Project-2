@@ -1,9 +1,6 @@
 self.addEventListener('message', function(event) {
   console.log(event);
-  if (event.data === 'Get Giphy!') {
-    let params = parseURL();
-    getGiphy(params);
-  }
+  getGiphy(event.data);
 });
  
 function parseURL(){
