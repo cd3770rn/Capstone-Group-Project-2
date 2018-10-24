@@ -64,22 +64,17 @@ function getFlickr(input) {
   });
 }
 
-// // API #3 -- Unsplash
-// function getUnsplash(input){
-//   let search = "https://source.unsplash.com/category/" + input
-//   let xhr = $.get(search);
-
-//   xhr.done(function (response) {
-//     let imgs = response.data; // coming back as undefined
-//     img = createIMG(imgURL); // causing error because imgs is undefined.
-//     $("main").append(img);
-//   });
-// }
+// API #3 -- Unsplash
+function getUnsplash(input){
+  var input = $("searchtext").val();
+  var xhr = "https://source.unsplash.com/category/" + input + "/350x350"
+  createIMG(xhr);
+}
 
 function populatePage(input) {
   // TODO: Make this multithreaded.
   getGiphy(input);
   getFlickr(input);
-  //getUnsplash(input);
+  getUnsplash(input);
 }
 
