@@ -4,3 +4,4 @@ self.addEventListener('message', function(event) {
     console.log('Mr. Giphy is getting gifs from Giphy!');  
   }
 });
+ 
