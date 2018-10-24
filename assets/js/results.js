@@ -67,9 +67,13 @@ function getFlickr(input) {
 // API #3 -- Unsplash
 function getUnsplash(input){
   // TODO: Put this in a loop so you get more than 1 image out of it. 
-  let xhr = "https://source.unsplash.com/category/" + input + "/350x350"
-  img = createIMG(xhr);
-  $("#img-stack").append(img);
+  let resultCount = 10;
+  
+  for (let i = 0; i < resultCount; i++){
+    let xhr = "https://source.unsplash.com/featured/?" + input;
+    img = createIMG(xhr);
+    $("#img-stack").append(img);
+  }
 }
 
 function populatePage(input) {
