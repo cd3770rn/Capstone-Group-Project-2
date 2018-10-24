@@ -8,8 +8,7 @@ window.onload = function() {
   
   setTimeout(function() {
     sizeImgOverlay();
-  }, 3500);
-  hideAnimation();
+  }, 3500).then(hideAnimation());
 }
   
 function parseURL(){
