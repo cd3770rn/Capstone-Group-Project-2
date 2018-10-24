@@ -1,3 +1,5 @@
+importScripts('//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js');
+
 self.addEventListener('message', function(event) {
   console.log(event);
   getGiphy(event.data);
