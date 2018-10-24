@@ -9,6 +9,10 @@ window.onload = function() {
     hideAnimation();
   }, 5000);
 }
+
+window.onbeforeunload = function() {
+  showAnimation();
+}
   
 function parseURL(){
   // This will remove all of the unwanted characters from the URL and just give you the query string at the end.
