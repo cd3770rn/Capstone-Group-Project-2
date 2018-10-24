@@ -37,6 +37,6 @@ function getGiphy(input){
         let imgURL = jiffs[i].images.original.url;
         img = createIMG(imgURL);
         $("#img-stack").append(img);
-      }`
+      }
   });
 }
