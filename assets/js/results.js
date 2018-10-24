@@ -73,8 +73,8 @@ function getUnsplash(input){
 
 function populatePage(input) {
   // TODO: Make this multithreaded.
-  getGiphy(input);
-  getFlickr(input);
+//   getGiphy(input);
+//   getFlickr(input);
   getUnsplash(input);
 }
 
