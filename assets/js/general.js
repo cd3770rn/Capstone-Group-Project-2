@@ -47,6 +47,10 @@ function hideAnimation() {
   $(".loading-animation").attr('class', 'loading-animation closed');  
 }
 
+function saveImage(element) {
+  console.log($(element).closest(".img-container").find("img"));
+} 
+
 // ================
 // ===== AUTH =====
 // ================
