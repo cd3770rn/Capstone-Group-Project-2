@@ -66,20 +66,17 @@ function getFlickr(input) {
 
 // API #3 -- Unsplash
 function getUnsplash(input){
-  // TODO: Put this in a loop so you get more than 1 image out of it. 
-  let resultCount = 10;
-  let xhr;
-  for (let i = 0; i < resultCount; i++){
-    xhr = "https://source.unsplash.com/featured/?" + input;
-    img = createIMG(xhr);
-    $("#img-stack").append(img);
-  }
+  let xhr = "https://source.unsplash.com/featured/?" + input;
+  img = createIMG(xhr);
+  $("#img-stack").append(img);
 }
 
 function populatePage(input) {
   // TODO: Make this multithreaded.
   getGiphy(input);
   getFlickr(input);
-  getUnsplash(input);
+  for (let i = 0; i < 10; i++){
+    getUnsplash(input);
+  }
 }
 
