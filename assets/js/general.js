@@ -47,6 +47,10 @@ function hideAnimation() {
   $(".loading-animation").attr('class', 'loading-animation closed');  
 }
 
+function showAnimation() {
+  $(".loading-animation").attr('class', 'loading-animation open');  
+}
+
 function saveImage(element) {
   let id = firebase.auth().currentUser.uid;
   let src = $(element).closest(".img-container").find("img")[0].src;
