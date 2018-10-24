@@ -51,10 +51,10 @@ function saveImage(element) {
   let id = firebase.auth().currentUser.uid;
   let src = $(element).closest(".img-container").find("img")[0].src;
   let img; 
-  if (src.contains("giphy")) {
+  if (src.includes("giphy")) {
     img = src.match("([^\/])([a-zA-Z0-9]){10,}")[0];
   }
-  else if (src.contains("flickr")) {
+  else if (src.includes("flickr")) {
     img = src.match("([^\/\.])([a-zA-Z0-9_]){12,}")[0];
   }
   console.log(img);
