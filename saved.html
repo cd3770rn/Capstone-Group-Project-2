@@ -11,6 +11,40 @@
   
   <body>
     <main>
+      <div class="loading-animation open">
+        <div class="animation">
+          <h1 class="ml6">
+            <span class="text-wrapper">
+              <span class="letters">JIFF.LY</span>
+            </span>
+          </h1>
+          <script>
+          // Wrap every letter in a span
+          $('.ml6 .letters').each(function(){
+            // /([^\x00-\x80]|\w)/g
+            $(this).html($(this).text().replace(/([^\x00-\x80]|.)/g, "<span class='letter'>$&</span>"));
+          });
+          setTimeout(function() {
+            anime.timeline({loop: true})
+              .add({
+                targets: '.ml6 .letter',
+                translateY: ["1.1em", 0],
+                translateZ: 0,
+                duration: 750,
+                delay: function(el, i) {
+                  return 50 * i;
+                }
+              }).add({
+                targets: '.ml6',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+              });
+            }, 1);
+          </script>
+        </div>
+      </div>
       <div id="topbar">
         <h1><a id="home" href="https://cd3770rn.github.io/Capstone-Group-Project-2">JIFF.LY</a></h1>
         <div class="action-bar">
