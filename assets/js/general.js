@@ -51,6 +51,7 @@ function saveImage(element) {
   console.log(firebase.auth().currentUser.uid);
   console.log($(element).closest(".img-container").find("img")[0].src);
   console.log($(element).closest(".img-container").find("img")[0]);
+  //save(firebase.auth().currentUser.uid, , );
 } 
 
 // ================
