@@ -48,7 +48,7 @@ function hideAnimation() {
 }
 
 function saveImage(element) {
-  console.log($(element).closest(".img-container").find("img"));
+  console.log($(element).closest(".img-container").find("img").src);
 } 
 
 // ================
