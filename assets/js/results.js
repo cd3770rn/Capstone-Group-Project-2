@@ -66,7 +66,7 @@ function getFlickr(input) {
 
 // API #3 -- Unsplash
 function getUnsplash(input){
-  let xhr = "https://source.unsplash.com/featured/?" + input;
+  let xhr = "https://source.unsplash.com/featured/?" + input + "," + input;
   img = createIMG(xhr);
   $("#img-stack").append(img);
 }
