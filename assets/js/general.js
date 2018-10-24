@@ -50,6 +50,7 @@ function hideAnimation() {
 function saveImage(element) {
   let id = firebase.auth().currentUser.uid;
   let src = $(element).closest(".img-container").find("img")[0].src;
+  console.log(src.match("/([^\/])([a-zA-Z0-9]){10,}/").join());
   console.log(src);
   save(firebase.auth().currentUser.uid, src, {src: src});
 } 
