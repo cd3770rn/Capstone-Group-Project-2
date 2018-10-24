@@ -1,5 +1,3 @@
-
-
 window.onload = function() {
   let params = parseURL();
   populatePage(params);
@@ -9,7 +7,7 @@ window.onload = function() {
   setTimeout(function() {
     sizeImgOverlay();
     hideAnimation();
-  }, 3500);
+  }, 5000);
 }
   
 function parseURL(){
