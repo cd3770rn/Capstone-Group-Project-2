@@ -240,10 +240,12 @@ button:hover {
 	opacity: 1;
 	bottom: 0;
 	transition: all .3s ease-out;
+	transition-delay: 1s;
 }
 
 .closed {
 	opacity: 0;
 	bottom: 100%;
 	transition: all .3s ease-out;
+	transition-delay: 1s;
 }
