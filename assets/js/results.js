@@ -67,7 +67,8 @@ function getFlickr(input) {
 // API #3 -- Unsplash
 function getUnsplash(input){
   let xhr = "https://source.unsplash.com/category/" + input + "/350x350"
-  createIMG(xhr);
+  img = createIMG(xhr);
+  $("#img-stack").append(img);
 }
 
 function populatePage(input) {
