@@ -48,10 +48,9 @@ function hideAnimation() {
 }
 
 function saveImage(element) {
-  console.log(firebase.auth().currentUser.uid);
-  console.log($(element).closest(".img-container").find("img")[0].src);
-  console.log($(element).closest(".img-container").find("img"));
-  //save(firebase.auth().currentUser.uid, , );
+  let id = firebase.auth().currentUser.uid;
+  let src = $(element).closest(".img-container").find("img")[0].src
+  save(firebase.auth().currentUser.uid, src, {src: src});
 } 
 
 // ================
