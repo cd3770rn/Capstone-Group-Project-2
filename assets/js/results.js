@@ -1,5 +1,5 @@
 window.onload = function() {
-  let params = parseURL();
+  let params = parseURL(); 
   populatePage(params);
   initDatabase();
   login();
