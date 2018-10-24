@@ -72,7 +72,7 @@ function getUnsplash(input){
 }
 
 function getUnsplash2(input){
-  let xhr = "https://source.unsplash.com/featured/?" + input;
+  let xhr = "https://source.unsplash.com/featured/?" + input + "," + input;
   img = createIMG(xhr);
   $("#img-stack").append(img);
 }
