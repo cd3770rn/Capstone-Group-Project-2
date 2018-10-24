@@ -66,22 +66,22 @@ function getFlickr(input) {
 
 // API #3 -- Unsplash
 function getUnsplash(input){
-  let xhr = "https://source.unsplash.com/featured/?" + input;
-  img = createIMG(xhr);
-  $("#img-stack").append(img);
+  let resultCount = 10;
+  let xhr;
+  let comboQuery = "," + input;
+  for (let i = 0; i < resultCount; i++){
+    xhr = "https://source.unsplash.com/featured/?" + input + comboQuery.repeat(i);
+    img = createIMG(xhr);
+    $("#img-stack").append(img);
+  }
 }
 
-function getUnsplash2(input){
-  let xhr = "https://source.unsplash.com/featured/?" + input + "," + input;
-  img = createIMG(xhr);
-  $("#img-stack").append(img);
-}
+
 
 function populatePage(input) {
   // TODO: Make this multithreaded.
   getGiphy(input);
   getFlickr(input);
   getUnsplash(input);
-  getUnsplash2(input)
 }
 
