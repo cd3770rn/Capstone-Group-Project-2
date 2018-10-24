@@ -3,7 +3,7 @@ window.onload = function() {
   populatePage(params);
   initDatabase();
   login();
-  
+   
   setTimeout(function() {
     sizeImgOverlay();
     hideAnimation();
