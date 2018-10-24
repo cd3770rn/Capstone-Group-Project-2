@@ -26,7 +26,7 @@
             // /([^\x00-\x80]|\w)/g
             $(this).html($(this).text().replace(/([^\x00-\x80]|.)/g, "<span class='letter'>$&</span>"));
           });
-          if ($(".letter").visible(true) {
+          setTimeout(function() {
             anime.timeline({loop: true})
               .add({
                 targets: '.ml6 .letter',
@@ -43,7 +43,7 @@
                 easing: "easeOutExpo",
                 delay: 1000
               });
-            }
+            }, 100);
           </script>
         </div>
       </div>
