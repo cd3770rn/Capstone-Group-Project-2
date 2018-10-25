@@ -1,8 +1,8 @@
 self.addEventListener('message', function(event) {
   console.log(event);
   console.log(event.data);
-//   let imgs = responseToIMG(event.data);
-//   self.postMessage({ response: imgs })
+  let imgs = responseToIMG(event.data);
+  self.postMessage({ response: imgs })
 });
 
 function parseURL(){
@@ -27,7 +27,7 @@ function createIMG(url) {
 function responseToIMG(response) {
   let array = [];
   for (let i = 0; i < response.length; i++){
-    let imgURL = response[i].images.original.url;
+    let imgURL = response[i].url;
     img = createIMG(imgURL);
     array.push(img);
   }
