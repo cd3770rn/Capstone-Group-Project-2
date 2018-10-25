@@ -92,6 +92,8 @@ function populatePage(input) {
 function startWorker(giphyInput, flickrInput) {
   let allQuery = giphyInput.concat(flickrInput);
   setTimeout(function() {
+    console.log(giphyInput);
+    console.log(flickrInput);
     console.log(allQuery);
     if (window.Worker) {
       worker = new Worker('/Capstone-Group-Project-2/assets/js/worker.js');
