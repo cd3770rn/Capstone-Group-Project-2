@@ -45,7 +45,7 @@ function getGiphy(input){
     }
     console.log(array);
   });
-  if (array[0] !== 'undefined') {
+  if (array[0] !== undefined) {
     giphyWorker(array);
   }
 }
