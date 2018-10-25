@@ -46,7 +46,7 @@ function getGiphy(input){
     }
     console.log(array);
   });
-  console.time("timer");
+  console.timeEnd("timer");
   return array
 }
 
