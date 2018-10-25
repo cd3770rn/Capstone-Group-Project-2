@@ -94,11 +94,13 @@ function startWorker(input) {
     if (window.Worker) {
     console.log('Giphy worker is ready!');
     giphy = new Worker('/Capstone-Group-Project-2/assets/js/worker-giphy.js');
+      
     giphy.postMessage(input);
-    giphy.addEventListener('message', function(event) {
-      console.log(event);
-      console.log(event.data);
-    });
+      
+//     giphy.addEventListener('message', function(event) {
+//       console.log(event);
+//       console.log(event.data);
+//     });
   }
 }, 50);
 
