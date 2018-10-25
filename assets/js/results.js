@@ -75,7 +75,6 @@ function parseResponse(response) {
   setTimeout(function() {
     for (let i = 0; i < response.length; i++) {
       for (let j = 0; j < response[i].response.length; j++) {
-        console.log(response[i].response[j]);
         $("#img-stack").append(response[i].response[j]);
       }
     }
