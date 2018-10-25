@@ -85,8 +85,10 @@ function populatePage(input) {
   let giphyQuery = getGiphy(input);
 //   getFlickr(input);
 //   getUnsplash(input);
-  console.log(giphyQuery);
-  giphyWorker(giphyQuery);
+  setTimeout(function() {
+    console.log(giphyQuery);
+    giphyWorker(giphyQuery);
+  }, 1000);
 }
 
 function giphyWorker(input) {
