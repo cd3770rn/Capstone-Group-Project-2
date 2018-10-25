@@ -68,7 +68,7 @@ function getUnsplash(input){
     console.log(data);
   }).fail(function() {
     alert("Failed to get Unsplash image");
-  };
+  });
 //   for (let i = 0; i < resultCount; i++){
 //     xhr = "https://source.unsplash.com/featured/?" + input + comboQuery.repeat(i);
 //     img = createIMG(xhr);
