@@ -117,6 +117,7 @@ a {
 
 a#home {
   text-shadow: black 2px 2px;
+  color: #aa00ff;
   padding-left: 10pt;
 }
 
@@ -261,8 +262,8 @@ button:hover {
 }
 
 #home {
-  color: #aa00ff;
-  text-shadow: 2px 2px #000000;
+	color: #fff;
+    	text-shadow: 0px 2px 4px rgba(170,0,255,0.5);
 	font-size: 36px!important;
 	padding-left: 20px;
 	position: relative;
