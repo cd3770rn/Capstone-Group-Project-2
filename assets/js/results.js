@@ -62,11 +62,18 @@ function getUnsplash(input){
   let resultCount = 10;
   let xhr;
   let comboQuery = "," + input;
-  for (let i = 0; i < resultCount; i++){
-    xhr = "https://source.unsplash.com/featured/?" + input + comboQuery.repeat(i);
-    img = createIMG(xhr);
-    $("#img-stack").append(img);
-  }
+  let jqxhr = $.get("https://source.unsplash.com/featured/?" + input, function() {
+    console.log("Getting Unsplash image...");
+  }).done(function(data) {
+    console.log(data);
+  }).fail(function() {
+    alert("Failed to get Unsplash image");
+  };
+//   for (let i = 0; i < resultCount; i++){
+//     xhr = "https://source.unsplash.com/featured/?" + input + comboQuery.repeat(i);
+//     img = createIMG(xhr);
+//     $("#img-stack").append(img);
+//   }
 }
 
 function parseResponse(response) {
@@ -82,8 +89,8 @@ function parseResponse(response) {
 
 function populatePage(input) {
   // TODO: Make this multithreaded.
-  let giphyQuery = getGiphy(input);
-  let flickrQuery = getFlickr(input);
+  //let giphyQuery = getGiphy(input);
+  //let flickrQuery = getFlickr(input);
 //   let unsplashQuery = getUnsplash(input);
 
   let response = startWorker(giphyQuery, flickrQuery);
