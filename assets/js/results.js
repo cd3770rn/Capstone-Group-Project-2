@@ -85,12 +85,9 @@ function populatePage(input) {
   let giphyQuery = getGiphy(input);
 //   getFlickr(input);
 //   getUnsplash(input);
-  checkGiphyReady(giphyQuery);
-}
-
-function checkGiphyReady(input) {
-  while True:
-    if (input[0] !== undefined) {
+  
+  while true:
+    if (giphyQuery[0] !== undefined) {
       giphyWorker(input);
       break;
     }
@@ -99,6 +96,7 @@ function checkGiphyReady(input) {
       setTimeout(function(){}, 250);  
     }
 }
+
 
 function giphyWorker(input) {
   console.log(input);
