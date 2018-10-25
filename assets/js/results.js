@@ -44,7 +44,6 @@ function getGiphy(input){
     for (i in response.data) {
       array.push(response.data[i].url);
     }
-    console.log(array);
   });
   console.timeEnd("timer");
   return array
@@ -92,11 +91,11 @@ function populatePage(input) {
 
 
 function giphyWorker(input) {
-  console.timeEnd("giphy");
   console.log(input);
   console.log(input[0]);
+  console.timeEnd("giphy");
   if (window.Worker) {
-    console.log('Mr. Giphy is ready to work!');
+    console.log('Giphy worker is ready!');
     worker = new Worker('/Capstone-Group-Project-2/assets/js/worker-giphy.js');
     worker.postMessage(input[0]);
     worker.addEventListener('message', function(event) {
