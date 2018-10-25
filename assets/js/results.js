@@ -98,7 +98,7 @@ function startWorker(giphyInput, flickrInput) {
       worker.postMessage(giphyInput); // send API response to worker
       worker.postMessage(flickrInput); // send API response to worker
       worker.addEventListener('message', function(event) {
-        console.log(event.data);
+//         console.log(event.data);
         output.push(event.data); // store worker response
         setTimeout(function() {
           worker.terminate(); 
