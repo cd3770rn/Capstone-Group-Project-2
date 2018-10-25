@@ -101,6 +101,6 @@ function startWorker(giphyInput, flickrInput) {
         console.log(event.data);
       });
     }
-  }, 50);
+  }, 100);
 }
 
