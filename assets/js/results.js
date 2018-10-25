@@ -69,13 +69,14 @@ function getUnsplash(input){
 
 function parseResponse(response) {
   setTimeout(function() {
+    console.log(response.length);
     for (let i = 0; i < response.length; i++) {
       for (let j = 0; j < response[i].length; j++) {
         console.log(response[i][j]);
         //$("#img-stack").append(response[i][j]);
       }
     }
-  }, 100);
+  }, 1000);
 }
 
 function populatePage(input) {
