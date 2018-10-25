@@ -88,7 +88,7 @@ function populatePage(input) {
   setTimeout(function() {
     console.log(giphyQuery);
     giphyWorker(giphyQuery);
-  }, 1000);
+  }, 2000);
 }
 
 function giphyWorker(input) {
