@@ -13,6 +13,8 @@ function getSaved() {
   let saved = getAll(firebase.auth().currentUser.uid);
   let img;
   for (let i = 0; i < saved.length; i++){
+    console.log(saved[i]);
+    console.log(saved[i].src);
     img = createSavedIMG(saved[i].src);
     $("main").append(img);
   }
