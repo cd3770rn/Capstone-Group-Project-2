@@ -91,6 +91,7 @@ function populatePage(input) {
 
 function startWorker(giphyInput, flickrInput) {
   setTimeout(function() {
+    console.log(flickrInput);
     if (window.Worker) {
       worker = new Worker('/Capstone-Group-Project-2/assets/js/worker.js');
       worker.postMessage(giphyInput);
@@ -100,6 +101,6 @@ function startWorker(giphyInput, flickrInput) {
         console.log(event.data);
       });
     }
-  }, 200);
+  }, 1000);
 }
 
