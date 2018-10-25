@@ -35,7 +35,7 @@ function createIMG(url) {
 
 // API #1 -- Giphy
 function getGiphy(input){
-  let start = new Date();
+  console.time("timer");
   let quantity = "10";
   let search = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=" + quantity;
   let xhr = $.get(search);
@@ -46,9 +46,7 @@ function getGiphy(input){
     }
     console.log(array);
   });
-  let end = new Date();
-  console.log(start-end);
-  console.log(Math.round((start-end)/1000));
+  console.time("timer");
   return array
 }
 
