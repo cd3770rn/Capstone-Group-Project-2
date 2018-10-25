@@ -29,6 +29,7 @@ function getGiphy(input){
   let xhr = $.get(search);
   let array = [];
   xhr.done(function (response) {
+    console.log(response);
     for (i in response.data) {
       array.push(response.data[i].url);
     }
