@@ -1,10 +1,7 @@
 window.onload = function() {
   initDatabase();
   login();
-  
-  setTimeout(function() {
-    getSaved();
-  }, 500);
+  getSaved();
   
   setTimeout(function() {
     sizeImgOverlay();
@@ -14,17 +11,19 @@ window.onload = function() {
 
 
 function getSaved() {
-  console.log(firebase.auth().currentUser.uid);
-  let saved = getAll(firebase.auth().currentUser.uid);
-  console.log(saved);
-  console.log(saved.length);
-  let img;
-  for (let i = 0; i < saved.length; i++){
-    console.log(saved[i]);
-    console.log(saved[i].src);
-    img = createSavedIMG(saved[i].src);
-    $("main").append(img);
-  }
+  setTimeout(function() {
+    console.log(firebase.auth().currentUser.uid);
+    let saved = getAll(firebase.auth().currentUser.uid);
+    let img;
+    console.log(saved);
+    console.log(saved.length);
+    for (let i = 0; i < saved.length; i++){
+      console.log(saved[i]);
+      console.log(saved[i].src);
+      img = createSavedIMG(saved[i].src);
+      $("main").append(img);
+    }
+  }, 500);
 }
 
 function createSavedIMG(url) {
