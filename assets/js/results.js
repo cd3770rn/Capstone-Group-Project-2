@@ -50,7 +50,7 @@ function getGiphy(input){
 // API #2 -- Flickr
 function getFlickr(input) {
   let flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-  let resultCount = 10;
+  let resultCount = 20;
   let array = [];
   $.getJSON(flickerAPI, {
       tags: input,
@@ -103,6 +103,6 @@ function startWorker(giphyInput, flickrInput) {
         console.log(event.data);
       });
     }
-  }, 100);
+  }, 200);
 }
 
