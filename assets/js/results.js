@@ -90,14 +90,11 @@ function populatePage(input) {
 
 
 function startWorker(giphyInput, flickrInput) {
-  let allQuery = giphyInput.concat(flickrInput);
   setTimeout(function() {
-    console.log(giphyInput);
-    console.log(flickrInput);
-    console.log(allQuery);
     if (window.Worker) {
       worker = new Worker('/Capstone-Group-Project-2/assets/js/worker.js');
-      worker.postMessage(allQuery);
+      worker.postMessage(giphyInput);
+      worker.postMessage(flickrInput);
       worker.addEventListener('message', function(event) {
         console.log(event);
         console.log(event.data);
