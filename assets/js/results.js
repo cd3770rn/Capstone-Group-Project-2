@@ -35,7 +35,6 @@ function createIMG(url) {
 
 // API #1 -- Giphy
 function getGiphy(input){
-  console.time("timer");
   let quantity = "10";
   let search = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=" + quantity;
   let xhr = $.get(search);
@@ -45,7 +44,6 @@ function getGiphy(input){
       array.push(response.data[i].url);
     }
   });
-  console.timeEnd("timer");
   return array
 }
 
@@ -53,19 +51,19 @@ function getGiphy(input){
 function getFlickr(input) {
   let flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
   let resultCount = 10;
+  let array = [];
   $.getJSON(flickerAPI, {
       tags: input,
       tagmode: "any",
       format: "json"
   }).done(function (result, status, xhr) {
       for (i in result.items){
-        let imgURL = result.items[i].media.m;
-        img = createIMG(imgURL);
-        $("#img-stack").append(img);
+        array.push(result.items[i].media.m)
       }
   }).fail(function (xhr, status, error) {
       alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
   });
+  return array;
 }
 
 // API #3 -- Unsplash
@@ -83,24 +81,25 @@ function getUnsplash(input){
 function populatePage(input) {
   // TODO: Make this multithreaded.
   let giphyQuery = getGiphy(input);
+  let flickrQuery = getFlickr(input);
+  console.log(flickrQuery);
 //   getFlickr(input);
 //   getUnsplash(input);
   startWorker(giphyQuery);
 }
 
 
-function startWorker(input) {
+function startWorker(giphyInput) {
   setTimeout(function() {
     if (window.Worker) {
-    console.log('Giphy worker is ready!');
-    giphy = new Worker('/Capstone-Group-Project-2/assets/js/worker-giphy.js');
-      
-    giphy.postMessage(input);
-      
-    giphy.addEventListener('message', function(event) {
-      console.log(event);
-      console.log(event.data);
-    });
+      giphy = new Worker('/Capstone-Group-Project-2/assets/js/worker-giphy.js');
+      giphy.postMessage(giphyInput);
+      giphy.addEventListener('message', function(event) {
+        console.log(event);
+        console.log(event.data);
+        
+        
+      });
   }
 }, 50);
 
