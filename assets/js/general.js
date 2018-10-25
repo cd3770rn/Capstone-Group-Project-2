@@ -18,7 +18,7 @@ function showSignIn() {
   $(".action-bar").html("<button id='sign-in' class='lowercase font-18' onclick='login()'>Sign In</button>");
 }
 
-function getSaved() {
+function viewSaved() {
   setURL("https://cd3770rn.github.io/Capstone-Group-Project-2/saved.html");  
 }
 
