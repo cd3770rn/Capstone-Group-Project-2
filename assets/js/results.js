@@ -91,7 +91,7 @@ function giphyWorker(input) {
   if (window.Worker) {
     console.log('Mr. Giphy is ready to work!');
     worker = new Worker('/Capstone-Group-Project-2/assets/js/worker-giphy.js');
-    worker.postMessage(input);
+    worker.postMessage(input[0]);
     worker.addEventListener('message', function(event) {
       console.log(event);
       console.log(event.data);
