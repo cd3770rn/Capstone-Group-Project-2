@@ -47,6 +47,7 @@ function getGiphy(input){
     console.log(array);
   });
   let end = new Date();
+  console.log(start-end);
   console.log(Math.round((start-end)/1000));
   return array
 }
