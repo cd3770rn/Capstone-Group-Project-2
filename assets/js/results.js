@@ -83,14 +83,16 @@ function getUnsplash(input){
 
 function populatePage(input) {
   // TODO: Make this multithreaded.
-  
+  console.time("giphy");
   let giphyQuery = getGiphy(input);
 //   getFlickr(input);
 //   getUnsplash(input);
+  giphyWorker(giphyQuery);
 }
 
 
 function giphyWorker(input) {
+  console.timeEnd("giphy");
   console.log(input);
   console.log(input[0]);
   if (window.Worker) {
