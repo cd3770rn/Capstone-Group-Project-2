@@ -85,6 +85,7 @@ function populatePage(input) {
 //   getFlickr(input);
 //   getUnsplash(input);
   let allQuery = giphyQuery.concat(flickrQuery);
+  console.log(allQuery);
   startWorker(allQuery);
 }
 
