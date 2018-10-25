@@ -45,9 +45,7 @@ function getGiphy(input){
     }
     console.log(array);
   });
-  if (array[0] !== undefined) {
-    giphyWorker(array);
-  }
+  return array
 }
 
 // API #2 -- Flickr
@@ -87,6 +85,19 @@ function populatePage(input) {
   let giphyQuery = getGiphy(input);
 //   getFlickr(input);
 //   getUnsplash(input);
+  checkGiphyReady(giphyQuery);
+}
+
+function checkGiphyReady(input) {
+  while True:
+    if (input[0] !== undefined) {
+      giphyWorker(input);
+      break;
+    }
+    else {
+      console.log("not ready");
+      setTimeout(function(){}, 250);  
+    }
 }
 
 function giphyWorker(input) {
