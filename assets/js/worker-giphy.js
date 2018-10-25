@@ -1,5 +1,6 @@
 self.addEventListener('message', function(event) {
   console.log(event);
+  console.log(event.data);
   let imgs = responseToIMG(event.data);
   self.postMessage({ response: imgs })
 });
@@ -33,19 +34,19 @@ function responseToIMG(response) {
   return array;
 }
 
-// API #1 -- Giphy
-function getGiphy(input){
-  let quantity = "10";
-  let search = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=" + quantity;
-  let xhr = $.get(search);
+// // API #1 -- Giphy
+// function getGiphy(input){
+//   let quantity = "10";
+//   let search = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=" + quantity;
+//   let xhr = $.get(search);
 
-  xhr.done(function (response) {
-      var jiffs = response.data;
-      for (i in jiffs){
-        let imgURL = jiffs[i].images.original.url;
-        img = createIMG(imgURL);
-        $("#img-stack").append(img);
-      }
-  });
-}
+//   xhr.done(function (response) {
+//       var jiffs = response.data;
+//       for (i in jiffs){
+//         let imgURL = jiffs[i].images.original.url;
+//         img = createIMG(imgURL);
+//         $("#img-stack").append(img);
+//       }
+//   });
+// }
 
