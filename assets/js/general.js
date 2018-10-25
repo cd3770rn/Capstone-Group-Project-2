@@ -11,14 +11,14 @@ window.onload = function(){
 // ===================
 
 function hideSignIn() {
-  $(".action-bar").html("<button class='lowercase font-18' onclick='getSaved()'>Saved images</button><button id='sign-out' class='lowercase font-18' onclick='logOut()'>Sign Out</button>");
+  $(".action-bar").html("<button class='lowercase font-18' onclick='viewSaved()'>Saved images</button><button id='sign-out' class='lowercase font-18' onclick='logOut()'>Sign Out</button>");
 }
 
 function showSignIn() {
   $(".action-bar").html("<button id='sign-in' class='lowercase font-18' onclick='login()'>Sign In</button>");
 }
 
-function getSaved() {
+function viewSaved() {
   setURL("https://cd3770rn.github.io/Capstone-Group-Project-2/saved.html");  
 }
 
@@ -47,6 +47,10 @@ function hideAnimation() {
   $(".loading-animation").attr('class', 'loading-animation closed');  
 }
 
+function showAnimation() {
+  $(".loading-animation").attr('class', 'loading-animation open');  
+}
+
 function saveImage(element) {
   let id = firebase.auth().currentUser.uid;
   let src = $(element).closest(".img-container").find("img")[0].src;
@@ -57,8 +61,6 @@ function saveImage(element) {
   else if (src.includes("flickr")) {
     img = src.match("([^\/\.])([a-zA-Z0-9_]){12,}")[0];
   }
-  console.log(img);
-  console.log(src);
   save(firebase.auth().currentUser.uid, img, {src: src});
 } 
 

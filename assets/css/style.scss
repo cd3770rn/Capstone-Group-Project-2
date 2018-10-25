@@ -47,7 +47,7 @@ input[type=text] {
   font-family: 'Dosis', sans-serif;
   width: 12rem;
 	position: relative;
-	left: 1.75em;
+	left: 0.75em;
 }
 
 #searchbar {
@@ -253,4 +253,36 @@ button:hover {
 	bottom: 100%;
 	transition: all .3s ease-out;
 	transition-delay: 1s;
+}
+
+#img-stack {
+	position: relative;
+    	margin: 1% 10% 0 10%;
+}
+
+#home {
+	color: #fff;
+    	text-shadow: 0px 2px 4px rgba(170,0,255,0.5);
+	font-size: 36px!important;
+	padding-left: 20px;
+	position: relative;
+	top: 4px;
+}
+
+a:hover, a:focus {
+	color: inherit;
+}
+
+.delete-icon {	
+	width: 25px;
+	height: 25px;
+	float: right;
+}
+
+.delete-icon svg{
+	fill: rgba(150, 64, 64, 1);
+}
+
+#title {
+	font-size: 40px;
 }

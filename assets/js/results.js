@@ -3,11 +3,15 @@ window.onload = function() {
   populatePage(params);
   initDatabase();
   login();
-  
+   
   setTimeout(function() {
     sizeImgOverlay();
     hideAnimation();
   }, 5000);
+}
+
+window.onbeforeunload = function() {
+  showAnimation();
 }
   
 function parseURL(){
@@ -18,70 +22,94 @@ function parseURL(){
   return url;
 }
   
-function createIMG(url) {
-  // Cleaner way of creating an <img> tag than doing it all in one line
-  let divStart = "<div class='img-container'>"
-  let overlay = "<div class='img-overlay'><button class='add-icon' onclick='saveImage($(this))'><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewBox='0 0 31.444 31.444' xml:space='preserve'><path d='M1.119,16.841c-0.619,0-1.111-0.508-1.111-1.127c0-0.619,0.492-1.111,1.111-1.111h13.475V1.127 C14.595,0.508,15.103,0,15.722,0c0.619,0,1.111,0.508,1.111,1.127v13.476h13.475c0.619,0,1.127,0.492,1.127,1.111 c0,0.619-0.508,1.127-1.127,1.127H16.833v13.476c0,0.619-0.492,1.127-1.111,1.127c-0.619,0-1.127-0.508-1.127-1.127V16.841H1.119z'/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></button></div>"
-  let tagStart = "<img src='";
-  let tagEnd = "'/>";
-  let divEnd = "</div>";
-  let img = divStart + overlay + tagStart + url + tagEnd + divEnd;
-  return img;
-}
-
 // API #1 -- Giphy
 function getGiphy(input){
   let quantity = "10";
   let search = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=" + quantity;
   let xhr = $.get(search);
-  
+  let array = [];
   xhr.done(function (response) {
-      var jiffs = response.data;
+    var jiffs = response.data;
       for (i in jiffs){
         let imgURL = jiffs[i].images.original.url;
-        img = createIMG(imgURL);
-        $("#img-stack").append(img);
+        array.push(imgURL);
       }
   });
+  return array
 }
 
 // API #2 -- Flickr
 function getFlickr(input) {
   let flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-  let resultCount = 10;
+  let resultCount = 20;
+  let array = [];
   $.getJSON(flickerAPI, {
       tags: input,
       tagmode: "any",
       format: "json"
   }).done(function (result, status, xhr) {
       for (i in result.items){
-        let imgURL = result.items[i].media.m;
-        img = createIMG(imgURL);
-        $("#img-stack").append(img);
+        array.push(result.items[i].media.m)
       }
   }).fail(function (xhr, status, error) {
       alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
   });
+  return array;
 }
 
+
 // API #3 -- Unsplash
-function getUnsplash(input){
+function getUnsplash(input){  
   let resultCount = 10;
   let xhr;
   let comboQuery = "," + input;
+  let array = [];
   for (let i = 0; i < resultCount; i++){
     xhr = "https://source.unsplash.com/featured/?" + input + comboQuery.repeat(i);
-    img = createIMG(xhr);
-    $("#img-stack").append(img);
+    array.push(xhr);
   }
+  return array;
 }
 
-
+function parseResponse(response) {
+  setTimeout(function() {
+    for (let i = 0; i < response.length; i++) {
+      for (let j = 0; j < response[i].response.length; j++) {
+        $("#img-stack").append(response[i].response[j]);
+      }
+    }
+  }, 1000);
+}
 
 function populatePage(input) {
   // TODO: Make this multithreaded.
-  getGiphy(input);
-  getFlickr(input);
-  getUnsplash(input);
+  let giphyQuery = getGiphy(input);
+  let flickrQuery = getFlickr(input);
+  let unsplashQuery = getUnsplash(input);
+
+  let response = startWorker(giphyQuery, flickrQuery, unsplashQuery);
+  parseResponse(response);
+}
+
+
+function startWorker(giphyInput, flickrInput, unsplashInput) {
+  let output = [];
+  setTimeout(function() {
+    // New thread
+    if (window.Worker) {
+      worker = new Worker('/Capstone-Group-Project-2/assets/js/worker.js'); // start worker
+      worker.postMessage(giphyInput); // send API response to worker
+      worker.postMessage(flickrInput); // send API response to worker
+      worker.postMessage(unsplashInput); // send API response to worker
+      worker.addEventListener('message', function(event) {
+//         console.log(event.data);
+        output.push(event.data); // store worker response
+        setTimeout(function() {
+          worker.terminate(); 
+        }, 3000); // thread terminates after 3000ms
+      });
+    }
+  }, 550); // 550ms is long enough for elements in arguments to not appear as undefined
+  return output;
 }
 
