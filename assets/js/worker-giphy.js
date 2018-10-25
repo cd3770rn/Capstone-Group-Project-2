@@ -2,7 +2,7 @@ self.addEventListener('message', function(event) {
   console.log(event);
   console.log(event.data);
 //   let imgs = responseToIMG(event.data);
-  let imgs = createIMG(event.data[0].url);
+  let imgs = createIMG(event.data[0]);
   self.postMessage({ response: imgs })
 });
 
