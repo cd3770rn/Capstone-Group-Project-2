@@ -90,14 +90,16 @@ function populatePage(input) {
 
 
 function startWorker(giphyInput, flickrInput) {
+  let output = [];
   setTimeout(function() {
     if (window.Worker) {
       worker = new Worker('/Capstone-Group-Project-2/assets/js/worker.js');
       worker.postMessage(giphyInput);
       worker.postMessage(flickrInput);
       worker.addEventListener('message', function(event) {
-        console.log(event);
         console.log(event.data);
+        output.push(event.data);
+        worker.terminate();
       });
     }
   }, 500);
