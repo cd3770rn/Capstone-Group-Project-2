@@ -84,17 +84,18 @@ function populatePage(input) {
   let flickrQuery = getFlickr(input);
 //   getFlickr(input);
 //   getUnsplash(input);
-  let allQuery = giphyQuery.concat(flickrQuery);
-  console.log(allQuery);
-  startWorker(allQuery);
+
+  startWorker(giphyQuery, flickrQuery);
 }
 
 
-function startWorker(input) {
+function startWorker(giphyInput, flickrInput) {
+  let allQuery = giphyInput.concat(flickrInput);
   setTimeout(function() {
+    console.log(allQuery);
     if (window.Worker) {
       worker = new Worker('/Capstone-Group-Project-2/assets/js/worker.js');
-      worker.postMessage(input);
+      worker.postMessage(allQuery);
       worker.addEventListener('message', function(event) {
         console.log(event);
         console.log(event.data);
