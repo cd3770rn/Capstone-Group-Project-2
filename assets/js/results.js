@@ -69,6 +69,7 @@ function getUnsplash(input){
 
 function parseResponse(response) {
   setTimeout(function() {
+    console.log(response);
     console.log(response.length);
     console.log(response[0].length);
     console.log(response[1].length);
