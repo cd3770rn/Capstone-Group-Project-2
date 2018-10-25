@@ -32,13 +32,8 @@ function getGiphy(input){
     var jiffs = response.data;
       for (i in jiffs){
         let imgURL = jiffs[i].images.original.url;
-        console.log(imgURL);
+        array.push(imgURL);
       }
-//     console.log(response);
-//     for (i in response.data) {
-//       console.log(response[i].images.original.url)
-//       array.push(response.data[i].url);
-//     }
   });
   return array
 }
