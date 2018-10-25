@@ -31,6 +31,7 @@ function getGiphy(input){
   xhr.done(function (response) {
     console.log(response);
     for (i in response.data) {
+      console.log(response[i].images.original.url)
       array.push(response.data[i].url);
     }
   });
