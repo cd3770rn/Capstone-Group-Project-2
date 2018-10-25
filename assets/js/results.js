@@ -94,7 +94,7 @@ function giphyWorker(input) {
   console.log(input);
   setTimeout(function() {
     console.log(input[0]);
-  }, 1);
+  }, 10);
   console.timeEnd("giphy");
   if (window.Worker) {
     console.log('Giphy worker is ready!');
