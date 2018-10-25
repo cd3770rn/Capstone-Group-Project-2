@@ -79,8 +79,8 @@ function parseResponse(response) {
         console.log(j);
         console.log(response[i]);
         console.log(response[j]);
-        console.log(response[i].response);
-        console.log(response[j].response);
+        console.log(response[i].response[j]);
+        console.log(response[j].response[j]);
         console.log(response[i].response.length);
         console.log(response[j].response.length);
         console.log(response[i][j]);
