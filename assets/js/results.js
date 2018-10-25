@@ -59,35 +59,22 @@ function getFlickr(input) {
 
 
 // API #3 -- Unsplash
-function getUnsplash(input){
-  const unsplash = new Unsplash({
-    applicationId: "4f8b1cf7a933873b0cf83d57fdf65d8d3c84074dbbf103bb35f2af3c48378c85",
-    secret: "5923086b630248618a778f4ff8f1d2e7c8052c3deeeb6c39ea742128447c9c9d",
-    callbackUrl: "cd3770rn.github.io/Capstone-Group-Project-2/results.html"
+function getUnsplash(input){  
+  let resultCount = 10;
+  let xhr;
+  let comboQuery = "," + input;
+  let jqxhr = $.get("https://source.unsplash.com/featured/?" + input, function() {
+    console.log("Getting Unsplash image...");
+  }).done(function(data) {
+    $("body").append(data);
+  }).fail(function() {
+    alert("Failed to get Unsplash image");
   });
-  
-  unsplash.search.photos(input, 1)
-  .then(toJson)
-  .then(json => {
-    console.log(data);
-    // Your code
-  });
-  
-//   let resultCount = 10;
-//   let xhr;
-//   let comboQuery = "," + input;
-//   let jqxhr = $.get("https://source.unsplash.com/featured/?" + input, function() {
-//     console.log("Getting Unsplash image...");
-//   }).done(function(data) {
-//     $("body").append(data);
-//   }).fail(function() {
-//     alert("Failed to get Unsplash image");
-//   });
-//   for (let i = 0; i < resultCount; i++){
-//     xhr = "https://source.unsplash.com/featured/?" + input + comboQuery.repeat(i);
-//     img = createIMG(xhr);
-//     $("#img-stack").append(img);
-//   }
+  for (let i = 0; i < resultCount; i++){
+    xhr = "https://source.unsplash.com/featured/?" + input + comboQuery.repeat(i);
+    img = createIMG(xhr);
+    $("#img-stack").append(img);
+  }
 }
 
 function parseResponse(response) {
