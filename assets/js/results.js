@@ -92,7 +92,9 @@ function populatePage(input) {
 
 function giphyWorker(input) {
   console.log(input);
-  console.log(input[0]);
+  setTimeout(function() {
+    console.log(input[0]);
+  }, 100);
   console.timeEnd("giphy");
   if (window.Worker) {
     console.log('Giphy worker is ready!');
