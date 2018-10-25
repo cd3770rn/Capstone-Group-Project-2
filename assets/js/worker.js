@@ -25,9 +25,9 @@ function createIMG(url) {
 function responseToIMG(response) {
   let array = [];
   for (let i = 0; i < response.length; i++){
-    let imgURL = response[i];
-    img = createIMG(imgURL);
-    array.push(img);
+    let imgURL = response[i]; // get image url
+    img = createIMG(imgURL); // put url inside of html
+    array.push(img); // add it to the list of finished images
   }
   return array;
 }
