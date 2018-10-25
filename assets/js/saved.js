@@ -15,14 +15,16 @@ function getSaved() {
     console.log(firebase.auth().currentUser.uid);
     let saved = getAll(firebase.auth().currentUser.uid);
     let img;
-    console.log(saved);
-    console.log(saved.length);
-    for (let i = 0; i < saved.length; i++){
-      console.log(saved[i]);
-      console.log(saved[i].src);
-      img = createSavedIMG(saved[i].src);
-      $("main").append(img);
-    }
+    setTimeout(function() {
+      console.log(saved);
+      console.log(saved.length);
+      for (let i = 0; i < saved.length; i++){
+        console.log(saved[i]);
+        console.log(saved[i].src);
+        img = createSavedIMG(saved[i].src);
+        $("main").append(img);
+      }
+    }, 500);
   }, 500);
 }
 
