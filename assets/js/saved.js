@@ -17,6 +17,7 @@ function getSaved() {
   console.log(firebase.auth().currentUser.uid);
   let saved = getAll(firebase.auth().currentUser.uid);
   console.log(saved);
+  console.log(saved.length);
   let img;
   for (let i = 0; i < saved.length; i++){
     console.log(saved[i]);
