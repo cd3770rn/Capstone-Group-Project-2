@@ -82,27 +82,23 @@ function populatePage(input) {
   // TODO: Make this multithreaded.
   let giphyQuery = getGiphy(input);
   let flickrQuery = getFlickr(input);
-  console.log(flickrQuery);
 //   getFlickr(input);
 //   getUnsplash(input);
-  startWorker(giphyQuery);
+  let allQuery = giphyQuery.concat(flickrQuery);
+  startWorker(allQuery);
 }
 
 
-function startWorker(giphyInput) {
+function startWorker(input) {
   setTimeout(function() {
     if (window.Worker) {
-      giphy = new Worker('/Capstone-Group-Project-2/assets/js/worker-giphy.js');
-      giphy.postMessage(giphyInput);
-      giphy.addEventListener('message', function(event) {
+      worker = new Worker('/Capstone-Group-Project-2/assets/js/worker.js');
+      worker.postMessage(input);
+      worker.addEventListener('message', function(event) {
         console.log(event);
         console.log(event.data);
-        
-        
       });
-  }
-}, 50);
-
-  
+    }
+  }, 50);
 }
 
