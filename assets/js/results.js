@@ -97,10 +97,10 @@ function startWorker(input) {
       
     giphy.postMessage(input);
       
-//     giphy.addEventListener('message', function(event) {
-//       console.log(event);
-//       console.log(event.data);
-//     });
+    giphy.addEventListener('message', function(event) {
+      console.log(event);
+      console.log(event.data);
+    });
   }
 }, 50);
 
