@@ -70,8 +70,8 @@ function getUnsplash(input){
 function parseResponse(response) {
   setTimeout(function() {
     console.log(response.length);
-    for (let i = 0; i < response.length; i++) {
-      for (let j = 0; j < response[i].length; j++) {
+    for (i in response) {
+      for (j in response[i]) {
         console.log(response[i][j]);
         //$("#img-stack").append(response[i][j]);
       }
