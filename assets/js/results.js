@@ -29,11 +29,16 @@ function getGiphy(input){
   let xhr = $.get(search);
   let array = [];
   xhr.done(function (response) {
-    console.log(response);
-    for (i in response.data) {
-      console.log(response[i].images.original.url)
-      array.push(response.data[i].url);
-    }
+    var jiffs = response.data;
+      for (i in jiffs){
+        let imgURL = jiffs[i].images.original.url;
+        console.log(imgURL);
+      }
+//     console.log(response);
+//     for (i in response.data) {
+//       console.log(response[i].images.original.url)
+//       array.push(response.data[i].url);
+//     }
   });
   return array
 }
