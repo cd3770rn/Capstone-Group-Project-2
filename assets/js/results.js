@@ -91,7 +91,7 @@ function populatePage(input) {
 
 function giphyWorker(input) {
   console.log(input);
-  console.log(input[input.length-1]);
+  console.log(input.shift());
   if (window.Worker) {
     console.log('Mr. Giphy is ready to work!');
     worker = new Worker('/Capstone-Group-Project-2/assets/js/worker-giphy.js');
