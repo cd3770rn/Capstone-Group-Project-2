@@ -10,6 +10,7 @@ window.onload = function() {
 
 
 function getSaved() {
+  console.log(firebase.auth().currentUser.uid);
   let saved = getAll(firebase.auth().currentUser.uid);
   let img;
   for (let i = 0; i < saved.length; i++){
