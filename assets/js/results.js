@@ -68,7 +68,6 @@ function getUnsplash(input){
     xhr = "https://source.unsplash.com/featured/?" + input + comboQuery.repeat(i);
     array.push(xhr);
   }
-  console.log(array);
   return array;
 }
 
@@ -85,16 +84,16 @@ function parseResponse(response) {
 
 function populatePage(input) {
   // TODO: Make this multithreaded.
-  //let giphyQuery = getGiphy(input);
-  //let flickrQuery = getFlickr(input);
+  let giphyQuery = getGiphy(input);
+  let flickrQuery = getFlickr(input);
   let unsplashQuery = getUnsplash(input);
 
-//   let response = startWorker(giphyQuery, flickrQuery);
-//   parseResponse(response);
+  let response = startWorker(giphyQuery, flickrQuery, unsplashQuery);
+  parseResponse(response);
 }
 
 
-function startWorker(giphyInput, flickrInput) {
+function startWorker(giphyInput, flickrInput, unsplashInput) {
   let output = [];
   setTimeout(function() {
     // New thread
@@ -102,6 +101,7 @@ function startWorker(giphyInput, flickrInput) {
       worker = new Worker('/Capstone-Group-Project-2/assets/js/worker.js'); // start worker
       worker.postMessage(giphyInput); // send API response to worker
       worker.postMessage(flickrInput); // send API response to worker
+      worker.postMessage(unsplashInput); // send API response to worker
       worker.addEventListener('message', function(event) {
 //         console.log(event.data);
         output.push(event.data); // store worker response
