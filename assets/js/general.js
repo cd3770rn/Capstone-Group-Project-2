@@ -61,8 +61,6 @@ function saveImage(element) {
   else if (src.includes("flickr")) {
     img = src.match("([^\/\.])([a-zA-Z0-9_]){12,}")[0];
   }
-  console.log(img);
-  console.log(src);
   save(firebase.auth().currentUser.uid, img, {src: src});
 } 
 
