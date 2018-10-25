@@ -80,7 +80,7 @@ function populatePage(input) {
   // TODO: Make this multithreaded.
   
   //giphyWorker(input);
-//   getGiphy(input);
+  getGiphy(input);
 //   getFlickr(input);
 //   getUnsplash(input);
 }
