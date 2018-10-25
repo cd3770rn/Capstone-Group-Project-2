@@ -38,10 +38,13 @@ function getGiphy(input){
   let quantity = "10";
   let search = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=" + quantity;
   let xhr = $.get(search);
-  
+  let array = [];
   xhr.done(function (response) {
-    console.log(response.data);
-    return response.data;
+    for (i in response.data) {
+      array.push(response.data[i]);
+    }
+    console.log(array);
+    return array;
   });
 }
 
