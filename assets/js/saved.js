@@ -1,7 +1,9 @@
 window.onload = function() {
   initDatabase();
-  login();
-  getSaved();
+  login().then(function() {
+    getSaved();
+  });
+  //getSaved();
   
   setTimeout(function() {
     sizeImgOverlay();
