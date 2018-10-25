@@ -44,8 +44,8 @@ function getGiphy(input){
       array.push(response.data[i]);
     }
     console.log(array);
-    return array;
   });
+  return array;
 }
 
 // API #2 -- Flickr
@@ -85,10 +85,8 @@ function populatePage(input) {
   let giphyQuery = getGiphy(input);
 //   getFlickr(input);
 //   getUnsplash(input);
-  setTimeout(function() {
-    console.log(giphyQuery);
-    giphyWorker(giphyQuery);
-  }, 2000);
+  console.log(giphyQuery);
+  giphyWorker(giphyQuery);
 }
 
 function giphyWorker(input) {
