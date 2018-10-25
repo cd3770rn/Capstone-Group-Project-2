@@ -93,8 +93,8 @@ function populatePage(input) {
   //let flickrQuery = getFlickr(input);
   let unsplashQuery = getUnsplash(input);
 
-  let response = startWorker(giphyQuery, flickrQuery);
-  parseResponse(response);
+//   let response = startWorker(giphyQuery, flickrQuery);
+//   parseResponse(response);
 }
 
 
