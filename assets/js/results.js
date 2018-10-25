@@ -65,7 +65,7 @@ function getUnsplash(input){
   let jqxhr = $.get("https://source.unsplash.com/featured/?" + input, function() {
     console.log("Getting Unsplash image...");
   }).done(function(data) {
-    console.log(data);
+    $("body").append(data);
   }).fail(function() {
     alert("Failed to get Unsplash image");
   });
