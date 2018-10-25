@@ -63,18 +63,13 @@ function getUnsplash(input){
   let resultCount = 10;
   let xhr;
   let comboQuery = "," + input;
-  let jqxhr = $.get("https://source.unsplash.com/featured/?" + input, function() {
-    console.log("Getting Unsplash image...");
-  }).done(function(data) {
-    $("body").append(data);
-  }).fail(function() {
-    alert("Failed to get Unsplash image");
-  });
+  let array = [];
   for (let i = 0; i < resultCount; i++){
     xhr = "https://source.unsplash.com/featured/?" + input + comboQuery.repeat(i);
-    img = createIMG(xhr);
-    $("#img-stack").append(img);
+    array.push(xhr);
   }
+  console.log(array);
+  return array;
 }
 
 function parseResponse(response) {
