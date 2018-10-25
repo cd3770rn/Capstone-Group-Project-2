@@ -10,8 +10,9 @@ window.onload = function() {
 }
 
 function deleteSaved(element) {
-  console.log(getSrc(element));
-  //remove(firebase.auth().currentUser.uid, getSrc(element));  
+  if (confirm("Would you like to delete this image from your saved images?")) {
+    remove(firebase.auth().currentUser.uid, getSrc(element));  
+  }
 }
 
 function getSrc(element) {
