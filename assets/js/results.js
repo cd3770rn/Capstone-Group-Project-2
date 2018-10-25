@@ -45,7 +45,9 @@ function getGiphy(input){
     }
     console.log(array);
   });
-  giphyWorker(array);
+  if (array[0] !== 'undefined') {
+    giphyWorker(array);
+  }
 }
 
 // API #2 -- Flickr
