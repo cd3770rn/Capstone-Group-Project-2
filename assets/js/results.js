@@ -40,6 +40,7 @@ function getGiphy(input){
   let xhr = $.get(search);
   
   xhr.done(function (response) {
+    console.log(response.data);
     return response.data;
   });
 }
@@ -78,7 +79,7 @@ function getUnsplash(input){
 function populatePage(input) {
   // TODO: Make this multithreaded.
   
-  giphyWorker(input);
+  //giphyWorker(input);
 //   getGiphy(input);
 //   getFlickr(input);
 //   getUnsplash(input);
