@@ -1,9 +1,9 @@
 window.onload = function() {
   initDatabase();
   login();
-   
+  getSaved();
+  
   setTimeout(function() {
-    getSaved();
     sizeImgOverlay();
     hideAnimation();
   }, 5000);
@@ -13,6 +13,7 @@ window.onload = function() {
 function getSaved() {
   console.log(firebase.auth().currentUser.uid);
   let saved = getAll(firebase.auth().currentUser.uid);
+  console.log(saved);
   let img;
   for (let i = 0; i < saved.length; i++){
     console.log(saved[i]);
