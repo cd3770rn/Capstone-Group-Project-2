@@ -73,9 +73,9 @@ function parseResponse(response) {
     console.log(response.length);
     console.log(response[0].response.length);
     console.log(response[1].response.length);
-    for (let a = 0; a < response.length; a++) {
-      for (let b = 0; b < response[a].response.length; b++) {
-        console.log(response[a][b].response);
+    for (let i = 0; i < response.length; i++) {
+      for (let j = 0; j < response[i].response.length; j++) {
+        console.log(response[i][j].response);
         //$("#img-stack").append(response[i][j]);
       }
     }
