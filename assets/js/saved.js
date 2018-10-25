@@ -17,7 +17,7 @@ function getSaved() {
     setTimeout(function() {
       for (let i = 0; i < saved.length; i++){
         img = createSavedIMG(saved[i].src);
-        $("main").append(img);
+        $("#img-stack").append(img);
       }
     }, 500);
   }, 500);
