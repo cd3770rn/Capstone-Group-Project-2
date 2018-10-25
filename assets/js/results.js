@@ -99,8 +99,8 @@ function startWorker(giphyInput, flickrInput) {
       worker.addEventListener('message', function(event) {
         console.log(event.data);
         output.push(event.data);
-        worker.terminate();
       });
+      worker.terminate();
     }
   }, 500);
 }
