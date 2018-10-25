@@ -41,7 +41,6 @@ function getGiphy(input){
   let array = [];
   xhr.done(function (response) {
     for (i in response.data) {
-      console.log(response.data[i]);
       array.push(response.data[i].url);
     }
     console.log(array);
@@ -87,16 +86,18 @@ function populatePage(input) {
 //   getFlickr(input);
 //   getUnsplash(input);
   console.log(giphyQuery);
+  console.log(giphyQuery[0]);
+  console.log('---');
   giphyWorker(giphyQuery);
 }
 
 function giphyWorker(input) {
   console.log(input);
-  console.log(input.shift());
+  console.log(input[0]);
   if (window.Worker) {
     console.log('Mr. Giphy is ready to work!');
     worker = new Worker('/Capstone-Group-Project-2/assets/js/worker-giphy.js');
-    worker.postMessage(input[0].url);
+    worker.postMessage(input[0]);
     worker.addEventListener('message', function(event) {
       console.log(event);
       console.log(event.data);
