@@ -71,8 +71,8 @@ function parseResponse(response) {
   setTimeout(function() {
     console.log(response);
     console.log(response.length);
-    console.log(response[0].length);
-    console.log(response[1].length);
+    console.log(response[0].response.length);
+    console.log(response[1].response.length);
     for (let a = 0; a < response.length; a++) {
       for (let b = 0; b < response[a].length; b++) {
         console.log(response[a][b]);
