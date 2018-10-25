@@ -68,6 +68,7 @@ function getUnsplash(input){
 }
 
 function parseResponse(response) {
+  console.log("Parsing response...");
   for (let i = 0; i < response.length; i++) {
     for (let j = 0; j < response[i].length; j++) {
       console.log(response[i][j]);
