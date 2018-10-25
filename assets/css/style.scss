@@ -263,3 +263,9 @@ button:hover {
 a:hover, a:focus {
 	color: inherit;
 }
+
+.delete-icon svg{
+	height: 15px;
+	width: 15px;
+	fill: rgba(150, 64, 64, 1);
+}
