@@ -94,9 +94,8 @@ function giphyWorker(input) {
   console.log(input);
   setTimeout(function() {
     console.log(input[0]);
-  }, 50);
-  console.timeEnd("giphy");
-  if (window.Worker) {
+    console.timeEnd("giphy");
+    if (window.Worker) {
     console.log('Giphy worker is ready!');
     worker = new Worker('/Capstone-Group-Project-2/assets/js/worker-giphy.js');
     worker.postMessage(input[0]);
@@ -105,5 +104,8 @@ function giphyWorker(input) {
       console.log(event.data);
     });
   }
+}, 50);
+
+  
 }
 
