@@ -35,6 +35,7 @@ function createIMG(url) {
 
 // API #1 -- Giphy
 function getGiphy(input){
+  let start = new Date();
   let quantity = "10";
   let search = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=blYVByaqQPzRnJ2n8uYs3zfe5kSqcMzO&limit=" + quantity;
   let xhr = $.get(search);
@@ -45,6 +46,8 @@ function getGiphy(input){
     }
     console.log(array);
   });
+  let end = new Date();
+  console.log(Math.round((start-end)/1000));
   return array
 }
 
@@ -85,17 +88,6 @@ function populatePage(input) {
   let giphyQuery = getGiphy(input);
 //   getFlickr(input);
 //   getUnsplash(input);
-  
-  while (true) {
-    if (giphyQuery[0] !== undefined) {
-      giphyWorker(input);
-      break;
-    }
-    else {
-      console.log("not ready");
-      setTimeout(function(){}, 250);  
-    }
-  }
 }
 
 
