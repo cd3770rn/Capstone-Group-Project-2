@@ -106,5 +106,6 @@ function startWorker(giphyInput, flickrInput) {
       });
     }
   }, 500); // 500ms is long enough for elements in arguments to not appear as undefined
+  console.log(output);
 }
 
