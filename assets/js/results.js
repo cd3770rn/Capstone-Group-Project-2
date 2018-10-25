@@ -91,7 +91,7 @@ function populatePage(input) {
   // TODO: Make this multithreaded.
   //let giphyQuery = getGiphy(input);
   //let flickrQuery = getFlickr(input);
-//   let unsplashQuery = getUnsplash(input);
+  let unsplashQuery = getUnsplash(input);
 
   let response = startWorker(giphyQuery, flickrQuery);
   parseResponse(response);
