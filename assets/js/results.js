@@ -43,7 +43,6 @@ function getGiphy(input){
     for (i in response.data) {
       array.push(response.data[i]);
     }
-    console.log(array);
     return array;
   });
 }
@@ -82,17 +81,17 @@ function getUnsplash(input){
 function populatePage(input) {
   // TODO: Make this multithreaded.
   
-  //giphyWorker(input);
-  getGiphy(input);
+  let giphyQuery = getGiphy(input);
 //   getFlickr(input);
 //   getUnsplash(input);
+  giphyWorker(giphyQuery);
 }
 
 function giphyWorker(input) {
   if (window.Worker) {
     console.log('Mr. Giphy is ready to work!');
     worker = new Worker('/Capstone-Group-Project-2/assets/js/worker-giphy.js');
-    worker.postMessage(getGiphy(input));
+    worker.postMessage(input);
     worker.addEventListener('message', function(event) {
       console.log(event);
       console.log(event.data);
