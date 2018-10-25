@@ -3,6 +3,7 @@ window.onload = function() {
   login();
    
   setTimeout(function() {
+    getSaved();
     sizeImgOverlay();
     hideAnimation();
   }, 5000);
