@@ -12,6 +12,7 @@ window.onload = function() {
 function deleteSaved(element) {
   if (confirm("Would you like to delete this image from your saved images?")) {
     remove(firebase.auth().currentUser.uid, getSrc(element));  
+    $(element).remove();
   }
 }
 
